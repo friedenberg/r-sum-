@@ -1,10 +1,13 @@
 
 BREW_BUNDLE_CMD := ${brew bundle exec -- }
 
-all: build
+all: build open
 
 build:
-	${BREW_BUNDLE_CMD} pdflatex resume.latex
+	${BREW_BUNDLE_CMD} pdflatex -interaction=nonstopmode resume.latex
+
+open:
+	open resume.pdf
 
 install:
 	brew bundle install

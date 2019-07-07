@@ -1,8 +1,174 @@
-\documentclass{article}
-\title{Cartesian closed categories and the price of eggs}
-\author{Sasha Friedenberg}
-\date{September 1994}
+% LaTeX file for resume
+% This file uses the resume document class (res.cls)
+
+\documentclass[margin]{res}
+% the margin option causes section titles to appear to the left of body text
+\textwidth=5.2in % increase textwidth to get smaller right margin
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font
+
 \begin{document}
-   \maketitle
-   Hello world!
+
+\address{{\bf Sasha Friedenberg} \\ +1 (646) 708-1300 \\ sashafriedenberg@gmail.com }
+
+\begin{resume}
+
+\section{Experience}
+
+{\bf Platform Engineer,} Zagat \hfill 2019–present
+
+\begin{itemize} \itemsep -2pt  % reduce space between items
+
+    \item architected service-oriented backend service for image uploading and
+      serving with support for several providers such as GCS
+
+    \item containerized GRPC protobuf compilation and SDK generation
+
+\end{itemize}
+
+
+{\bf Software Engineer,} Etsy \hfill 2016–2019
+
+\begin{itemize} \itemsep -2pt %reduce space between items
+
+    \item developed holiday search and browse experience using in-house page
+      layout engine allowing API-side control of native client experience
+
+    \item led successful initiative to experiment with new machine-learning
+      dataset for buyer app launch screen resulting in revenue increases
+
+    \item created new push notifications for favorite items on sale and
+      retrofitted shipping notifications with embedded image content and actions
+
+    \item coordinated across product and engineering to lead and implement user
+      timezone settings to ensure push notifications are delivered at locale-appropriate times
+
+    \item designed and implemented a state machine that ingests GitHub data and
+      acts as a single source of truth for app releases
+
+    \item built automated app deployment system used to interface with Google
+      Play and iTunes Connect that maintains an audit trail, has isolated
+      credentials, and is SOX compliant
+
+    \item built screenshot diffing system using internal photo manipulation
+      service that generates screenshots for every new release and highlights
+      differences between them
+
+    \item built a custom survey prompt UI on Android that can be conditionally
+      shown after analytics events are fired
+
+    \item integrated with Qualtrics to present surveys in web views
+
+    \item isolated use of Qualtrics code to enable vendor changes and reduce
+      code of vendor stability issues
+
+\end{itemize}
+
+{\bf Release Manager,} Etsy \hfill 2014–2016
+
+\begin{itemize} \itemsep -2pt
+    \item led a major transformation in engineering culture by pioneering a
+      two-week release schedule and a continuous-delivery model of app releases.
+
+    \item responsible for the stable releases of the Etsy apps: Android Buyer,
+      Android Seller, iOS Buyer, and iOS Seller
+
+    \item mitigated product launch conflicts.
+
+    \item developed and documented failure-paths for emergency app releases
+      requiring expedited review, and bug fix releases as well as their source
+      control management strategies
+
+    \item developed “dry-dock” release strategy during peak holiday season to
+      minimize risk and negative impact on users and revenue
+
+    \item designed and built a UI to allow iOS engineers to selectively enable /
+      disable features in the iOS app to improve ease of testing
+
+\end{itemize}
+
+\section{Leadership Activities}
+
+{\bf Co-founder,} Monarch Computer Products Inc., Freeport, NY
+  \hfill 1985
+
+\begin{itemize} \itemsep -2pt
+
+  \item Leader of marketing effort for V.R.S. (Video
+  Rental System), \\
+  currently in test phase
+
+  \item  Perform accounting duties
+
+\end{itemize}
+
+{\bf President,} Delta Epsilon Pi Fraternity 
+  \hfill 1985
+
+\begin{itemize} \itemsep -2pt
+
+  \item  Responsible for the overall performance of the
+  chapter
+
+  \item Chair all house and alumni committee meetings
+
+  \item Liaison to the national fraternity and the RPI
+  administration
+
+\end{itemize}
+
+{\bf  Director,}  Rensselaer Fraternity Managers Association
+  \hfill 1984
+
+\begin{itemize} \itemsep -2pt
+
+  \item Evaluated and approved purchases in excess of
+  {\$}1,000,000 yearly
+
+  \item Formulated bookkeeping checklists for use by all fraternities
+\end{itemize}
+
+\section{Publications}
+How Etsy Ships Apps \\
+Etsy Engineering Blog, Code as Craft \\
+http://bit.ly/how-etsy-ships-apps \\
+
+% Tabulate Computer Skills; p{3in} defines paragraph 3 inches wide
+\section{Proficiencies}
+\begin{nohyphens}
+\begin{tabular}{l p{4in}}
+  \underline{Languages} &
+  C,
+  Go,
+  Java,
+  Objective-C,
+  PHP,
+  Python,
+  Ruby,
+  SQL
+  \\
+
+  \underline{Software} &
+  Bash,
+  Containers,
+  Git,
+  HTTP,
+  Kubernetes,
+  Mustache,
+  PHPUnit,
+  Protobuffers,
+  RSpec,
+  Sinatra,
+  Unix
+  \\
+
+\end{tabular}
+\end{nohyphens}
+
+\end{resume}
+
 \end{document}
+
+
+
+
