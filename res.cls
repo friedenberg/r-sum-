@@ -8,7 +8,6 @@
   \par
   \hyphenpenalty=10000
   \exhyphenpenalty=10000
-  \sloppy % Makes TeX obey margins by stretching inter word spaces
 }{\par}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,21 +242,13 @@
 %
 \def\namefont{\large\bf}
 \def\@linename{\begingroup
-  \def\\{, }
-  {\namefont\@name}
+  \def\\{}
+  {
+    \namefont\@name
+  }
+  \mbox{}\hfill \@addressone
   \vskip 2pt
   \fullline
-  \vskip 2pt
-  % where do you live?
-  \@ifundefined{@addressone}{%
-    % do nothing
-  }{%
-    \leavevmode\hbox to \textwidth
-      {\hfill\vbox{\hbox{\@addressone}
-		   \hbox{\@addresstwo}
-		  }%
-      }\par
-  }
 \endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
