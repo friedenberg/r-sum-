@@ -8,9 +8,11 @@ git push origin master
 
 version="v$(cat ./VERSION)"
 
+cp build/resume.pdf build/sasha_friedenberg_resume.pdf
+
 git diff --exit-code -s || (echo "unstaged changes, refusing to release" && exit 1)
 hub release create \
-  -a build/resume.pdf \
+  -a build/sasha_friedenberg_resume.pdf \
   -m "$version" \
   "$version"
 
