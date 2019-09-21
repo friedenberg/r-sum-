@@ -278,7 +278,7 @@
 \newskip\sectionskip
 \newdimen\resumewidth
 
-\resumewidth=6.5in
+\resumewidth=6.6in
 \sectionskip=3.5ex plus 1ex minus -.2ex % values stolen from LaTeX
 
 \def\newsectionwidth#1{%
@@ -457,7 +457,6 @@
 
 %\input article.sty
 
-\if@line\ds@line\else\ds@centered\fi
 \if@margin\ds@margin\else\ds@overlapped\fi
 
 
