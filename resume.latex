@@ -4,155 +4,165 @@
 \documentclass[line,margin]{res} 
 
 \usepackage{hyperref}
+\urlstyle{same}
 
-% the margin option causes section titles to appear to the left of body text 
-\textwidth=5.2in % increase textwidth to get smaller right margin
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font 
-
-\addtolength{\topmargin}{-.3in}
-\addtolength{\textheight}{.5in}
+\addtolength{\topmargin}{-.35in}
+\addtolength{\textheight}{1.5in}
 
 \begin{document} 
- 
-\name{\href{mailto:sashafriedenberg@gmail.com}{sasha.friedenberg@gmail.com}}
+
+  \begingroup
+    \nointerlineskip
+    \moveleft\hoffset\vbox{
+
+      \begingroup
+        \large\bf{Sasha Friedenberg}\\
+      \endgroup
+      \href{tel:6467081300}{+1-646-708-1300}\\
+      \href{mailto:sashafriedenberg@gmail.com}{sashafriedenberg@gmail.com}
+    } 
+  \endgroup
  
 \begin{resume} 
  
-\section{Experience}
+  \section{Experience}
 
-  {\bf Platform Engineer,} Zagat \hfill Spring 2019–present
+    {\bf Platform Engineer,} The Infatuation / Zagat \hfill Spring 2019–present
 
-  \begin{itemize} \itemsep -2pt  % reduce space between items
+    \begin{itemize} \itemsep -2pt  % reduce space between items
 
-      \item architected service-oriented backend service for image uploading and
-        serving with support for several providers such as GCS
+        \item Responsible for prioritizing and guiding work on \url{zagat.com} (legacy
+          and new UGC product), TextRex (SMS-based restaurant recommendation
+          concierge service), and \url{infatuation.com} across a team of four engineers
 
-  \end{itemize}
+        \item Responsible for roadmapping MVP, Beta, and launch of new UGC product
 
- 
-  {\bf Software Engineer,} Etsy \hfill 2016–2019
+        \item Developed staging and local development environment for a mixed
+          codebase (legacy and new product)
 
-  \begin{itemize} \itemsep -2pt
+        \item Architected a service-oriented backend service for image uploading and
+          serving with support for several providers such as GCS
 
-      \item improved speed of spell-corrected search results API by by 300ms
-        from 700 ms and led A/B experiment to prove conversion win
+    \end{itemize}
 
-      \item developed holiday search and browse experience using in-house page
-        layout engine allowing API-side control of native client experience
+  
+    {\bf Software Engineer,} Etsy \hfill 2016–2019
 
-      \item led successful initiative to experiment with new machine-learning
-        dataset for buyer app launch screen resulting in revenue increases
+    \begin{itemize} \itemsep -2pt
 
-      \item coordinated across product and engineering to lead and implement
-        user timezone settings to ensure push notifications are delivered at
-        locale-appropriate times
+        \item Improved speed of spell-corrected search results API by by 300ms
+          from 700 ms and led A/B test use in-house experimentation platform to
+          prove conversion win
 
-      \item designed and built a state machine that ingests GitHub data
-        and automates app deployments. Interfaces with Google Play and iTunes
-        Connect. Maintains an audit trail, isolates credentials, and is SOX
-        compliant
+        \item Developed holiday search and browse experience using in-house page
+          layout engine allowing API-side control of native client experience
 
-      \item built screenshot diffing system using internal photo manipulation
-        service that generates screenshots for every new release and highlights
-        differences between them
+        \item Led successful initiative to experiment with new machine-learning
+          dataset for buyer app launch screen resulting in revenue increases due
+          to adoption of improved dataset
 
-      \item built a custom survey prompt UI on Android that can be conditionally
-        shown after analytics events are fired using server configs and
-        Qualtrics surveys
+        \item Coordinated across product and engineering to lead and implement
+          user timezone settings to ensure push notifications are delivered at
+          locale-appropriate times
 
-  \end{itemize}
+        \item Designed and built Ship (a state machine that ingests GitHub data
+          and automates app deployments). Interfaces with Google Play and iTunes
+          Connect. Maintains an audit trail, isolates credentials, and is SOX
+          compliant
 
-  {\bf Release Manager,} Etsy \hfill 2014–2016
+        \item Built screenshot diffing system using in-house photo manipulation
+          service that generates screenshots for every new release and highlights
+          differences between them
 
-  \begin{itemize} \itemsep -2pt
-      \item led a major transformation in engineering culture by pioneering a
-        two-week release schedule and a continuous-delivery model of app
-        releases.
+    \end{itemize}
 
-      \item responsible for the stable releases of the Etsy apps: Android Buyer,
-        Android Seller, iOS Buyer, and iOS Seller
+    {\bf Release Manager,} Etsy \hfill 2014–2016
 
-      \item designed and built a UI to allow iOS engineers to selectively enable
-        / disable features in the iOS app to improve ease of testing
+    \begin{itemize} \itemsep -2pt
+        \item Responsible for the stable releases of the Etsy apps: Android Buyer,
+          Android Seller, iOS Buyer, and iOS Seller
 
-  \end{itemize}
+        \item Led a major transformation in engineering culture by pioneering a
+          two-week release schedule and a continuous-delivery model of app
+          releases.
 
-\section{Leadership, Teaching, \& Volunteering}
+    \end{itemize}
 
-  {\bf NYC Tech Talent Pipeline } CUNY \hfill Spring 2018–Fall 2019
+  \section{Leadership, Teaching, \& Volunteering}
 
-  \begin{itemize} \itemsep -2pt
+    {\bf NYC Tech Talent Pipeline, } CUNY \hfill Spring 2018–present
 
-    \item Tech-in-Residence Corps Member: candidate to teach an
-      adjunct CS course at CUNY schools
+    \begin{itemize} \itemsep -2pt
 
-    \item volunteered to conduct mock interviews for CS students and provided
-      feedback and guidance to help prepare the students for future tech jobs
+      \item Tech-in-Residence Corps Member: candidate to teach an
+        adjunct CS course at CUNY schools
 
-  \end{itemize}
+      \item Conducted mock interviews for CS students and provided
+        feedback and guidance to help prepare the students for future tech jobs
 
-  {\bf Algorithms \& Datastructures Course, } Etsy \hfill Fall 2018
+    \end{itemize}
 
-  \begin{itemize} \itemsep -2pt
+    {\bf Algorithms \& Datastructures Course, } Etsy \hfill Fall 2018
 
-    \item taught a 4-month algorithms and data-structures course for a group
-      of 5 engineers (3 of whom were promoted)
+    \begin{itemize} \itemsep -2pt
 
-  \end{itemize}
+      \item Taught a 4-month algorithms and data-structures course for a group
+        of 5 engineers, 3 of whom were promoted
 
-  {\bf Cohort Selection Interviews,} Pursuit (formerly C4Q) \hfill Spring 2019
+    \end{itemize}
 
-  \begin{itemize} \itemsep -2pt
+    {\bf Cohort Selection Interviews,} Pursuit (formerly C4Q) \hfill Spring 2019
 
-    \item volunteered to conduct candidate selection interviews for the
-      Pursuit 5.1 fellowship program
+    \begin{itemize} \itemsep -2pt
 
-  \end{itemize}
+      \item Conducted candidate selection interviews for the
+        Pursuit 5.1 fellowship program
 
-\section{Publications}
-  {\bf How Etsy Ships Apps, } Etsy Engineering Blog, Code as Craft
-  \hfill Spring 2017
-  \href{http://bit.ly/how-etsy-ships-apps}{http://bit.ly/how-etsy-ships-apps} \\
+    \end{itemize}
 
-\section{Proficiencies}
+  \section{Publications}
+    {\bf How Etsy Ships Apps, } Etsy Engineering Blog, Code as Craft
+    \hfill Spring 2017
+    \href{http://bit.ly/how-etsy-ships-apps}{http://bit.ly/how-etsy-ships-apps} \\
 
-  \begin{nohyphens}
-  \begin{tabular}{l p{4in}}
+  \section{Proficiencies}
 
-    \underline{Languages} &
-    C,
-    Go,
-    Java,
-    Objective-C,
-    PHP,
-    Python,
-    Ruby,
-    SQL
-    \\
+    \begin{nohyphens}
+    \begin{tabular}{l p{4in}}
 
-    \underline{Platforms} &
-    Android,
-    iOS,
-    Web Backend,
-    \\
+      Languages &
+      C,
+      Go,
+      Java,
+      Objective-C,
+      PHP,
+      Python,
+      Ruby,
+      SQL
+      \\
 
-    \underline{Software} &
-    Bash,
-    Containers,
-    Git,
-    HTTP,
-    Kubernetes,
-    Mustache,
-    PHPUnit,
-    Protobuffers,
-    RSpec,
-    Sinatra,
-    Unix
-    \\
+      Platforms &
+      Android,
+      iOS,
+      Web Backend,
+      \\
 
-  \end{tabular}
-  \end{nohyphens}
+      Software &
+      Bash,
+      Containers,
+      Git,
+      HTTP,
+      Kubernetes,
+      Mustache,
+      PHPUnit,
+      Protobuffers,
+      RSpec,
+      Sinatra,
+      Unix
+      \\
+
+    \end{tabular}
+    \end{nohyphens}
 
 \end{resume} 
 \end{document} 
