@@ -12,6 +12,9 @@
 *.cb2
 .*.lb
 
+build/
+.DS_Store
+
 ## Intermediate documents:
 *.dvi
 *.xdv
