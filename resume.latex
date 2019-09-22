@@ -4,12 +4,14 @@
 \documentclass[line,margin]{res} 
 
 \usepackage{hyperref}
+\usepackage{ragged2e}
 \urlstyle{same}
 
 \addtolength{\topmargin}{-.35in}
 \addtolength{\textheight}{1.5in}
 
 \begin{document} 
+\justifying
 
   \begingroup
     \nointerlineskip
