@@ -4,11 +4,9 @@ BREW_BUNDLE_CMD := brew bundle exec --
 DIR_BUILD := build
 
 FILES_RAW_LATEX_CLASS := $(wildcard *.cls)
-
 FILES_RAW_LATEX := $(wildcard *.latex)
 
 FILES_BUILD_LATEX := $(addprefix $(DIR_BUILD)/,$(FILES_RAW_LATEX))
-
 FILES_BUILD_LATEX_PDF := $(FILES_BUILD_LATEX:.latex=.pdf)
 
 all: $(FILES_BUILD_LATEX_PDF)
@@ -24,7 +22,10 @@ $(FILES_BUILD_LATEX_PDF): $(FILES_BUILD_LATEX) $(FILES_RAW_LATEX_CLASS) | $(DIR_
 		-interaction=nonstopmode \
 		-output-directory=$(DIR_BUILD) \
 		$(notdir $(@:.pdf=.latex))
-	open $@
+
+.PHONY: open
+open: $(FILES_BUILD_LATEX_PDF)
+	open $(FILES_BUILD_LATEX_PDF)
 
 .PHONY: clean
 clean:
