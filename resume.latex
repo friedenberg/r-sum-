@@ -44,7 +44,7 @@
         \item Developed staging and local development environment for a mixed
           codebase (legacy and new product)
 
-        \item Architected a service-oriented backend service for image uploading and
+        \item Architected a service-oriented backend for image uploading and
           serving with support for several providers such as GCS
 
     \end{itemize}
@@ -53,8 +53,8 @@
 
     \begin{itemize} \itemsep -2pt
 
-        \item Improved speed of spell-corrected search results API by by 300ms
-          from 700 ms and led A/B test use in-house experimentation platform to
+        \item Improved speed of spell-corrected search results API by 300ms
+          from 700 ms and led A/B test using in-house experimentation platform to
           prove conversion win
 
         \item Developed holiday search and browse experience using in-house page
