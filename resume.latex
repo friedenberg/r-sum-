@@ -125,7 +125,11 @@
 
   \section{Publications}
     \entry{How Etsy Ships Apps}{Etsy Engineering Blog, Code as Craft}{Spring 2019}
-    \href{http://bit.ly/how-etsy-ships-apps}{http://bit.ly/how-etsy-ships-apps}
+    \begin{itemize} \itemsep -2pt
+
+      \item\href{http://bit.ly/how-etsy-ships-apps}{http://bit.ly/how-etsy-ships-apps}
+
+    \end{itemize}
 
   \section{Proficiencies}
 
