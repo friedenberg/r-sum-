@@ -174,7 +174,18 @@
     \end{tabular}
     \end{nohyphens}
 
+  \begingroup
+  \endgroup
+
+
 \end{resume} 
+
+\begin{center}
+  \leftskip=-\sectionwidth \centerline{
+    \tiny v\input{VERSION}
+  }
+\end{center}
+
 \end{document} 
 
 

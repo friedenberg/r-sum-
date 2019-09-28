@@ -8,6 +8,7 @@ git push origin master
 
 version="v$(cat ./VERSION)"
 
+make build/resume.pdf
 cp build/resume.pdf build/sasha_friedenberg_resume.pdf
 
 git diff --exit-code -s || (echo "unstaged changes, refusing to release" && exit 1)
