@@ -9,6 +9,11 @@
 \addtolength{\topmargin}{-.35in}
 \addtolength{\textheight}{1.5in}
 
+% sets default itemsep for itemize
+\let\tempone\itemize
+\let\temptwo\enditemize
+\renewenvironment{itemize}{\tempone\itemsep -2pt}{\temptwo}
+
 \begin{document} 
 \raggedright
 
@@ -32,7 +37,7 @@
 
     \entry{Platform Engineer}{The Infatuation / Zagat}{Spring 2019-present}
 
-    \begin{itemize} \itemsep -2pt  % reduce space between items
+    \begin{itemize}
 
         \item Responsible for prioritizing and guiding work on \url{zagat.com} (legacy
           and new UGC product), TextRex (SMS-based restaurant recommendation
@@ -50,7 +55,7 @@
 
     \entry{Senior Software Engineer}{Etsy}{2016-2019}
 
-    \begin{itemize} \itemsep -2pt
+    \begin{itemize}
 
         \item Improved speed of spell-corrected search results API by 300ms
           from 700 ms and led A/B test using in-house experimentation platform to
@@ -80,7 +85,7 @@
 
     \entry{Release Manager}{Etsy}{2014-2016}
 
-    \begin{itemize} \itemsep -2pt
+    \begin{itemize}
         \item Responsible for the stable releases of the Etsy apps: Android Buyer,
           Android Seller, iOS Buyer, and iOS Seller
 
@@ -94,7 +99,7 @@
 
     \entry{NYC Tech Talent Pipeline}{CUNY}{Spring 2018-present}
 
-    \begin{itemize} \itemsep -2pt
+    \begin{itemize}
 
       \item Tech-in-Residence Corps Member: candidate to teach an
         adjunct CS course at CUNY schools
@@ -106,7 +111,7 @@
 
     \entry{Algorithms \& Datastructures Course}{Etsy}{Fall 2018}
 
-    \begin{itemize} \itemsep -2pt
+    \begin{itemize}
 
       \item Taught a 4-month algorithms and data-structures course for a group
         of 5 engineers, 3 of whom were promoted
@@ -115,7 +120,7 @@
 
     \entry{Cohort Selection Intervews}{Pursuit (formerly C4Q)}{Spring 2019}
 
-    \begin{itemize} \itemsep -2pt
+    \begin{itemize}
 
       \item Conducted candidate selection interviews for the
         Pursuit 5.1 fellowship program
@@ -124,7 +129,7 @@
 
   \section{Publications}
     \entry{How Etsy Ships Apps}{Etsy Engineering Blog, Code as Craft}{Spring 2019}
-    \begin{itemize} \itemsep -2pt
+    \begin{itemize}
 
       \item\href{http://bit.ly/how-etsy-ships-apps}{http://bit.ly/how-etsy-ships-apps}
 
