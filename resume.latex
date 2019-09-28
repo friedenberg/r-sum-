@@ -17,12 +17,10 @@
     \nointerlineskip
     \moveleft\hoffset\vbox{
 
-      \begingroup
-        \large\bf{Sasha Friedenberg}\\
-      \endgroup
+      \large{\bf{Sasha Friedenberg}}\\
       \href{tel:6467081300}{+1-646-708-1300}\\
       \href{mailto:sashafriedenberg@gmail.com}{sashafriedenberg@gmail.com}
-    } 
+    }
   \endgroup
  
 \begin{resume} 
