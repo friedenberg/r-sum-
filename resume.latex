@@ -22,12 +22,16 @@
       \href{mailto:sashafriedenberg@gmail.com}{sashafriedenberg@gmail.com}
     }
   \endgroup
- 
-\begin{resume} 
- 
+
+\begin{resume}
+
+  \newcommand\entry[3]{
+    {\noindent\bf #1,}\, #2\,\dotfill\,#3\par
+  }
+
   \section{Experience}
 
-    {\bf Platform Engineer,} The Infatuation / Zagat \hfill Spring 2019–present
+    \entry{Platform Engineer}{The Infatuation / Zagat}{Spring 2019-present}
 
     \begin{itemize} \itemsep -2pt  % reduce space between items
 
@@ -45,8 +49,7 @@
 
     \end{itemize}
 
-  
-    {\bf Software Engineer,} Etsy \hfill 2016–2019
+    \entry{Senior Software Engineer}{Etsy}{2016-2019}
 
     \begin{itemize} \itemsep -2pt
 
@@ -76,7 +79,7 @@
 
     \end{itemize}
 
-    {\bf Release Manager,} Etsy \hfill 2014–2016
+    \entry{Release Manager}{Etsy}{2014-2016}
 
     \begin{itemize} \itemsep -2pt
         \item Responsible for the stable releases of the Etsy apps: Android Buyer,
@@ -90,7 +93,7 @@
 
   \section{Leadership, Teaching, \& Volunteering}
 
-    {\bf NYC Tech Talent Pipeline,} CUNY \hfill Spring 2018–present
+    \entry{NYC Tech Talent Pipeline}{CUNY}{Spring 2018-present}
 
     \begin{itemize} \itemsep -2pt
 
@@ -102,7 +105,7 @@
 
     \end{itemize}
 
-    {\bf Algorithms \& Datastructures Course,} Etsy \hfill Fall 2018
+    \entry{Algorithms \& Datastructures Course}{Etsy}{Fall 2018}
 
     \begin{itemize} \itemsep -2pt
 
@@ -111,7 +114,7 @@
 
     \end{itemize}
 
-    {\bf Cohort Selection Interviews,} Pursuit (formerly C4Q) \hfill Spring 2019
+    \entry{Cohort Selection Intervews}{Pursuit (formerly C4Q)}{Spring 2019}
 
     \begin{itemize} \itemsep -2pt
 
@@ -121,8 +124,7 @@
     \end{itemize}
 
   \section{Publications}
-    {\bf How Etsy Ships Apps,} Etsy Engineering Blog, Code as Craft
-    \hfill Spring 2017
+    \entry{How Etsy Ships Apps}{Etsy Engineering Blog, Code as Craft}{Spring 2019}
     \href{http://bit.ly/how-etsy-ships-apps}{http://bit.ly/how-etsy-ships-apps}
 
   \section{Proficiencies}
