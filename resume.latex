@@ -6,8 +6,8 @@
 \usepackage{hyperref}
 \urlstyle{same}
 
-\addtolength{\topmargin}{-.35in}
-\addtolength{\textheight}{1.5in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.7in}
 
 % sets default itemsep for itemize
 \let\tempone\itemize
