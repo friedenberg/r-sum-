@@ -33,23 +33,29 @@
     {\noindent\bf #1,}\, #2\,\dotfill\,#3\par
   }
 
+  \newcommand\entrynolocation[2]{
+    {\noindent\bf #1}\dotfill\,#2\par
+  }
+
   \section{Experience}
 
     \entry{Platform Engineer}{The Infatuation / Zagat}{Spring 2019-present}
 
     \begin{itemize}
 
-        \item Responsible for prioritizing and guiding work on \url{zagat.com} (legacy
-          and new UGC product), TextRex (SMS-based restaurant recommendation
-          concierge service), and \url{infatuation.com} across a team of four engineers
+        \item Responsible for creating roadmaps and prioritizing work on
+          \url{zagat.com} (legacy and new UGC product), TextRex (SMS-based
+          restaurant recommendation concierge service), and \url{infatuation.com}
+          across a team of four engineers
 
-        \item Responsible for roadmapping MVP, Beta, and launch of new UGC product
+        \item Singlehandedly implemented CI/CD on Google Cloud Platform for
+          zagat.com (legacy product) and updated Docker containers and Kubernetes
+          deployments with best practices. Also implemented structured logging
+          that supports Stackdriver in both legacy and new UGC product.
+          Transitioned zagat.com to daily deploys from previously monthly deploys
 
         \item Developed staging and local development environment for a mixed
           codebase (legacy and new product)
-
-        \item Architected a service-oriented backend for image uploading and
-          serving with support for several providers such as GCS
 
     \end{itemize}
 
@@ -77,21 +83,21 @@
           Connect. Maintains an audit trail, isolates credentials, and is SOX
           compliant
 
-        \item Built screenshot diffing system using in-house photo manipulation
-          service that generates screenshots for every new release and highlights
-          differences between them
-
     \end{itemize}
 
     \entry{Release Manager}{Etsy}{2014-2016}
 
     \begin{itemize}
-        \item Responsible for the stable releases of the Etsy apps: Android Buyer,
-          Android Seller, iOS Buyer, and iOS Seller
-
         \item Led a major transformation in engineering culture by pioneering a
           two-week release schedule and a continuous-delivery model of app
           releases.
+
+        \item Responsible for the stable releases of the Etsy apps: Android Buyer,
+          Android Seller, iOS Buyer, and iOS Seller
+
+        \item Built screenshot diffing system using in-house photo manipulation
+          service that generates screenshots for every new release and highlights
+          differences
 
     \end{itemize}
 
@@ -100,9 +106,6 @@
     \entry{NYC Tech Talent Pipeline}{CUNY}{Spring 2018-present}
 
     \begin{itemize}
-
-      \item Tech-in-Residence Corps Member: candidate to teach an
-        adjunct CS course at CUNY schools
 
       \item Conducted mock interviews for CS students and provided
         feedback and guidance to help prepare the students for future tech jobs
@@ -118,9 +121,13 @@
 
     \end{itemize}
 
-    \entry{Cohort Selection Intervews}{Pursuit (formerly C4Q)}{Spring 2019}
+    \entrynolocation{Pursuit (formerly C4Q)}{Spring 2019}
 
     \begin{itemize}
+
+      \item Mentor to a Pursuit fellow, providing guidance around job
+        applications, whiteboard interviews, resume preparation, and
+        behavioral interviews
 
       \item Conducted candidate selection interviews for the
         Pursuit 5.1 fellowship program
@@ -153,13 +160,14 @@
 
       Platforms &
       Android,
-      iOS,
+      Google Cloud Platform
       Web Backend
+      iOS,
       \\
 
       Software &
       Bash,
-      Containers,
+      Docker,
       Git,
       HTTP,
       Kubernetes,
