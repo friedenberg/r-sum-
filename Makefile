@@ -19,7 +19,8 @@ $(FILES_BUILD_LATEX): $(FILES_RAW_LATEX) | $(DIR_BUILD)
 
 $(FILES_BUILD_LATEX_PDF): $(FILES_BUILD_LATEX) $(FILES_RAW_LATEX_CLASS) | $(DIR_BUILD)
 	${BREW_BUNDLE_CMD} pdflatex \
-		-interaction=nonstopmode \
+		-halt-on-error \
+		-interaction=batchmode \
 		-output-directory=$(DIR_BUILD) \
 		$(notdir $(@:.pdf=.latex))
 
