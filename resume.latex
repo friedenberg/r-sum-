@@ -39,7 +39,7 @@
 
   \section{Experience}
 
-    \entry{Platform Engineer}{The Infatuation / Zagat}{Spring 2019--present}
+    \entry{Platform Engineer}{The Infatuation / Zagat}{2019}
 
     \begin{itemize}
 
@@ -171,9 +171,10 @@
       Git,
       HTTP,
       Kubernetes,
+      Linux,
       Mustache,
       PHPUnit,
-      Protobuffers,
+      Protobufs,
       RSpec,
       Sinatra,
       Unix
