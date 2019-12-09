@@ -165,7 +165,7 @@
       iOS,
       \\
 
-      Software &
+      Software & \raggedright
       Bash,
       Docker,
       Git,
