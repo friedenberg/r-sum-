@@ -100,7 +100,30 @@
 
   \section{Teaching \& Volunteering}
 
-    \entry{NYC Tech Talent Pipeline}{CUNY}{Spring 2018--present}
+    \entrynolocation{Pursuit (formerly C4Q)}{Spring--present}
+
+    \begin{itemize}
+
+      \item Planned and taught a three-hour workshop on effectively using
+        datastructures, problem solving, big-O time complexity, and big-O space
+        complexity to excel at traditional computer science whiteboarding
+        interviews
+
+      \item Mentored Pursuit fellow, providing guidance around job
+        applications, whiteboard interviews, and resume preparation
+
+    \end{itemize}
+
+    \entrynolocation{Etsy}{Fall 2018}
+
+    \begin{itemize}
+
+      \item Taught a 4-month data structures and algorithms course for a group
+        of 5 engineers, 3 of whom were promoted
+
+    \end{itemize}
+
+    \entrynolocation{CodeNation \& NYC Tech Talent Pipeline}{Spring 2018--present}
 
     \begin{itemize}
 
@@ -109,27 +132,6 @@
 
     \end{itemize}
 
-    \entry{Algorithms \& Datastructures Course}{Etsy}{Fall 2018}
-
-    \begin{itemize}
-
-      \item Taught a 4-month algorithms and data-structures course for a group
-        of 5 engineers, 3 of whom were promoted
-
-    \end{itemize}
-
-    \entrynolocation{Pursuit (formerly C4Q)}{Spring 2019}
-
-    \begin{itemize}
-
-      \item Mentor to a Pursuit fellow, providing guidance around job
-        applications, whiteboard interviews, resume preparation, and
-        behavioral interviews
-
-      \item Conducted candidate selection interviews for the
-        Pursuit 5.1 fellowship program
-
-    \end{itemize}
 
   \section{Publications}
     \entry{How Etsy Ships Apps}{Etsy Engineering Blog, Code as Craft}{Spring 2019}
