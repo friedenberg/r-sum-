@@ -68,6 +68,11 @@
           from 700 ms and led A/B test using in-house experimentation platform to
           prove conversion win
 
+        \item Designed and built Ship, an internal tool that ingests GitHub data
+          and automates app deployments across email and Slack. Interfaces with
+          Google Play and iTunes Connect. Maintains an audit trail, isolates
+          credentials, and is SOX compliant
+
         \item Developed holiday search and browse experience using in-house page
           layout engine allowing API-side control of native client experience
 
@@ -78,11 +83,6 @@
         \item Coordinated across product and engineering to lead and implement
           user timezone settings to ensure push notifications are delivered at
           locale-appropriate times
-
-        \item Designed and built Ship (a state machine that ingests GitHub data
-          and automates app deployments). Interfaces with Google Play and iTunes
-          Connect. Maintains an audit trail, isolates credentials, and is SOX
-          compliant
 
     \end{itemize}
 
