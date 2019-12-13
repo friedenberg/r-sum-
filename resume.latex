@@ -43,10 +43,11 @@
 
     \begin{itemize}
 
-        \item Responsible for creating roadmaps and prioritizing work on
-          \url{zagat.com} (legacy and new UGC product), TextRex (SMS-based
-          restaurant recommendation concierge service), and \url{infatuation.com}
-          across a team of four engineers
+        \item Responsible for creating roadmaps, prioritizing work, and guiding
+          architecture for the following products: legacy Zagat editorial app,
+          new Zagat user-generated content app, TextRex SMS-based restaurant
+          recommendation concierge service, and The Infatuation editorialized
+          restaurant finder app
 
         \item Singlehandedly implemented CI/CD on Google Cloud Platform for
           zagat.com (legacy product) and updated Docker containers and Kubernetes
