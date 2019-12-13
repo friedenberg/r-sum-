@@ -147,6 +147,7 @@
     \begin{tabular}{l p{4in}}
 
       Languages &
+      Bash,
       C,
       Go,
       Java,
@@ -165,17 +166,12 @@
       \\
 
       Software & \raggedright
-      Bash,
       Docker,
       Git,
       HTTP,
       Kubernetes,
       Linux,
-      Mustache,
-      PHPUnit,
       Protobufs,
-      RSpec,
-      Sinatra,
       Unix
       \\
 
