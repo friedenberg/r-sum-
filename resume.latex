@@ -39,7 +39,10 @@
 
   \section{Experience}
 
-    \entry{Platform Engineer}{The Infatuation / Zagat}{2019}
+    \entry
+    {Platform Engineer}
+    {The Infatuation / Zagat}
+    {2019}
 
     \begin{itemize}
 
@@ -60,7 +63,10 @@
 
     \end{itemize}
 
-    \entry{Senior Software Engineer}{Etsy}{2016--2019}
+    \entry
+    {Senior Software Engineer}
+    {Etsy}
+    {2016--2019}
 
     \begin{itemize}
 
@@ -86,7 +92,10 @@
 
     \end{itemize}
 
-    \entry{Release Manager}{Etsy}{2014--2016}
+    \entry
+    {Release Manager}
+    {Etsy}
+    {2014--2016}
 
     \begin{itemize}
         \item Led a major transformation in engineering culture by pioneering a
@@ -98,9 +107,12 @@
 
     \end{itemize}
 
-  \section{Teaching \& Volunteering}
+  \section
+  {Teaching \& Volunteering}
 
-    \entrynolocation{Pursuit (formerly C4Q)}{Spring--present}
+    \entrynolocation
+    {Pursuit (formerly C4Q)}
+    {Spring--present}
 
     \begin{itemize}
 
@@ -114,7 +126,9 @@
 
     \end{itemize}
 
-    \entrynolocation{Etsy}{Fall 2018}
+    \entrynolocation
+    {Etsy}
+    {Fall 2018}
 
     \begin{itemize}
 
@@ -123,7 +137,9 @@
 
     \end{itemize}
 
-    \entrynolocation{CodeNation \& NYC Tech Talent Pipeline}{Spring 2018--present}
+    \entrynolocation
+    {CodeNation \& NYC Tech Talent Pipeline}
+    {Spring 2018--present}
 
     \begin{itemize}
 
@@ -133,15 +149,25 @@
     \end{itemize}
 
 
-  \section{Publications}
-    \entry{How Etsy Ships Apps}{Etsy Engineering Blog, Code as Craft}{Spring 2019}
+  \section
+  {Publications}
+
+    \entry
+    {How Etsy Ships Apps}
+    {Etsy Engineering Blog, Code as Craft}
+    {Spring 2019}
+
     \begin{itemize}
 
-      \item\href{http://bit.ly/how-etsy-ships-apps}{http://bit.ly/how-etsy-ships-apps}
+      \item
+        \href
+        {http://bit.ly/how-etsy-ships-apps}
+        {http://bit.ly/how-etsy-ships-apps}
 
     \end{itemize}
 
-  \section{Proficiencies}
+  \section
+  {Proficiencies}
 
     \begin{nohyphens}
     \begin{tabular}{l p{4in}}
