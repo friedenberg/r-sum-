@@ -3,6 +3,7 @@
 
 \documentclass[line,margin]{res} 
 
+\usepackage{xparse}
 \usepackage{hyperref}
 \urlstyle{same}
 
@@ -15,6 +16,14 @@
 \renewenvironment{itemize}{\tempone\itemsep -2pt}{\temptwo}
 
 \begin{document} 
+
+\NewDocumentCommand{\entry}{o o o}
+  {
+    \IfNoValueTF {#3}
+      { {\noindent\bf #1}\dotfill\,#2\par }
+      { {\noindent\bf #1,}\, #2\,\dotfill\,#3\par }
+  }
+
 \raggedright
 
   \begingroup
@@ -28,21 +37,12 @@
   \endgroup
 
 \begin{resume}
-
-  \newcommand\entry[3]{
-    {\noindent\bf #1,}\, #2\,\dotfill\,#3\par
-  }
-
-  \newcommand\entrynolocation[2]{
-    {\noindent\bf #1}\dotfill\,#2\par
-  }
-
   \section{Experience}
 
     \entry
-    {Platform Engineer}
-    {The Infatuation / Zagat}
-    {2019}
+    [Platform Engineer]
+    [The Infatuation / Zagat]
+    [2019]
 
     \begin{itemize}
 
@@ -65,9 +65,9 @@
     \end{itemize}
 
     \entry
-    {Senior Software Engineer}
-    {Etsy}
-    {2016--2019}
+    [Senior Software Engineer]
+    [Etsy]
+    [2016--2019]
 
     \begin{itemize}
 
@@ -94,9 +94,9 @@
     \end{itemize}
 
     \entry
-    {Release Manager}
-    {Etsy}
-    {2014--2016}
+    [Release Manager]
+    [Etsy]
+    [2014--2016]
 
     \begin{itemize}
         \item Led a major transformation in engineering culture by pioneering a
@@ -111,9 +111,9 @@
   \section
   {Teaching \& Volunteering}
 
-    \entrynolocation
-    {Pursuit (formerly C4Q)}
-    {Spring--present}
+    \entry
+    [Pursuit (formerly C4Q)]
+    [Spring--present]
 
     \begin{itemize}
 
@@ -127,9 +127,9 @@
 
     \end{itemize}
 
-    \entrynolocation
-    {Etsy}
-    {Fall 2018}
+    \entry
+    [Etsy]
+    [Fall 2018]
 
     \begin{itemize}
 
@@ -138,9 +138,9 @@
 
     \end{itemize}
 
-    \entrynolocation
-    {CodeNation \& NYC Tech Talent Pipeline}
-    {Spring 2018--present}
+    \entry
+    [CodeNation \& NYC Tech Talent Pipeline]
+    [Spring 2018--present]
 
     \begin{itemize}
 
@@ -154,9 +154,9 @@
   {Publications}
 
     \entry
-    {How Etsy Ships Apps}
-    {Etsy Engineering Blog, Code as Craft}
-    {Spring 2019}
+    [How Etsy Ships Apps]
+    [Etsy Engineering Blog, Code as Craft]
+    [Spring 2019]
 
     \begin{itemize}
 
