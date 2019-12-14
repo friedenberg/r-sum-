@@ -53,10 +53,11 @@
           restaurant finder app
 
         \item Singlehandedly implemented CI/CD on Google Cloud Platform for
-          zagat.com (legacy product) and updated Docker containers and Kubernetes
-          deployments with best practices. Also implemented structured logging
-          that supports Stackdriver in both legacy and new UGC product.
-          Transitioned zagat.com to daily deploys from previously monthly deploys
+          Zagat user-generated content app, and updated Docker containers and
+          Kubernetes deployments with best practices. Also implemented
+          structured logging that supports Stackdriver in both legacy editorial
+          and new user-generated content product. Transitioned both apps daily
+          deploys from previously monthly deploys
 
         \item Developed staging and local development environment for a mixed
           codebase (legacy and new product)
@@ -75,9 +76,9 @@
           prove conversion win
 
         \item Designed and built Ship, an internal tool that ingests GitHub data
-          and automates app deployments across email and Slack. Interfaces with
-          Google Play and iTunes Connect. Maintains an audit trail, isolates
-          credentials, and is SOX compliant
+          and automates app deployments across iTunes Connect, Google Play,
+          email, and Slack. Maintains an audit trail, isolates credentials, and
+          is SOX compliant
 
         \item Developed holiday search and browse experience using in-house page
           layout engine allowing API-side control of native client experience
@@ -102,8 +103,8 @@
           two-week release schedule and a continuous-delivery model of app
           releases.
 
-        \item Responsible for the stable releases of the Etsy apps: Android Buyer,
-          Android Seller, iOS Buyer, and iOS Seller
+        \item Responsible for the stable releases of the Etsy apps: Android
+          Buyer, Android Seller, iOS Buyer, and iOS Seller
 
     \end{itemize}
 
