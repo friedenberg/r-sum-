@@ -15,7 +15,7 @@
 \let\temptwo\enditemize
 \renewenvironment{itemize}{\tempone\itemsep -2pt}{\temptwo}
 
-\begin{document} 
+\begin{document}
 
 \NewDocumentCommand{\entry}{o o o}
   {
@@ -49,7 +49,7 @@
         \item Created roadmaps, prioritized work, and guided architecture for
           legacy editorial app, new user-generated content app, SMS-based
           restaurant recommendation concierge service, and editorialized
-          restaurant finder app
+          restaurant finder app.
 
         \item Increased deploy frequency from once a month to several times a
           day. Updated Kubernetes and Docker image to best practices (e.g.,
@@ -58,8 +58,8 @@
           created local and staging dev environments.
 
         \item Optimized use of Google Maps API and reduced costs by
-          \textdollar20/month. Integrated Firebase for user identity and sign-in.
-          Integrated Stackdriver logging and metrics. Integrated Google
+          \textdollar20k/month. Integrated Firebase for user identity and
+          sign-in. Integrated Stackdriver logging and metrics. Integrated Google
           CloudSQL.
 
     \end{itemize}
@@ -171,8 +171,8 @@
 
       \item
         \href
-        {http://bit.ly/how-etsy-ships-apps}
-        {http://bit.ly/how-etsy-ships-apps}
+        {https://sashafriedenberg.com/how-etsy-ships-apps}
+        {https://sashafriedenberg.com/how-etsy-ships-apps}
 
     \end{itemize}
 
