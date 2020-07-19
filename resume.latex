@@ -47,6 +47,17 @@
     \section{Related Experience}
 
     \entry
+    [Developer Advocate]
+    [Google]
+    [2020--present]
+
+    \begin{itemize}
+      \item Partner and consult with developers of the Google Ads API beta and
+        ensure successful implementation and migration from Google AdWords API
+
+    \end{itemize}
+
+    \entry
     [Platform Engineer]
     [The Infatuation / Zagat]
     [2019]
@@ -119,21 +130,6 @@
         students.
 
     \end{itemize}
-
-    \entry
-    [Release Manager]
-    [Etsy]
-    [2014--2016]
-
-    \begin{itemize}
-      \item Transformed engineering culture by pioneering a two-week release
-        schedule and a continuous-delivery model of app releases.
-
-      \item Responsible for stable release of Etsy Android
-        Buyer, Android Seller, iOS Buyer, and iOS Seller apps.
-
-    \end{itemize}
-
 
 
     \section
