@@ -102,13 +102,22 @@
         using in-house page layout engine allowing API-side control of native
         client experience.
 
-      \item Led successful initiative to experiment with new improved
-        machine-learning dataset for buyer app launch screen resulting in
-        revenue increases.
-
       \item Coordinated across product and engineering to lead and implement
         user timezone settings to ensure push notifications are delivered at
         locale-appropriate times.
+
+    \end{itemize}
+
+    \entry
+    [Release Manager]
+    [Etsy]
+    [2014--2016]
+
+    \begin{itemize}
+      \item Transformed engineering culture by designing and leading execution
+        of a two-week release schedule and a continuous-delivery model of app
+        releases for Etsy Android Buyer, Android Seller, iOS Buyer, and iOS
+        Seller apps.
 
     \end{itemize}
 
@@ -131,13 +140,12 @@
 
     \end{itemize}
 
-
     \section
     {Volunteering}
 
     \entry
-    [Pursuit]
-    [2019--present]
+    [CodeNation, Pursuit, \& NYC Tech Talent Pipeline]
+    [2018--present]
 
     \begin{itemize}
 
@@ -145,19 +153,11 @@
         datastructures, problem solving, and big-O time \& space complexity to
         excel at traditional tech whiteboard interviews
 
-      \item Mentored Pursuit fellow, providing guidance around job
-        applications, whiteboard interviews, and resume preparation
-
-    \end{itemize}
-
-    \entry
-    [CodeNation \& NYC Tech Talent Pipeline]
-    [2018--present]
-
-    \begin{itemize}
-
       \item Conducts mock behavioral and technical interviews for CS students
         and provides feedback and guidance to help prepare them future tech jobs
+
+      \item Mentored Pursuit fellow, providing guidance around job
+        applications, whiteboard interviews, and resume preparation
 
     \end{itemize}
 
