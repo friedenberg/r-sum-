@@ -30,9 +30,16 @@
     \nointerlineskip
     \moveleft\hoffset\vbox{
 
-      \large{\bf{Sasha Friedenberg}}\\
-      \href{tel:6467081300}{+1-646-708-1300}\\
-      \href{mailto:sashafriedenberg@gmail.com}{sashafriedenberg@gmail.com}
+      \large
+      {\bf{Sasha Friedenberg}}\\
+
+      \href
+      {tel:6467081300}
+      {+1-646-708-1300}\\
+
+      \href
+      {mailto:resume@sashafriedenberg.com}
+      {resume@sashafriedenberg.com}\\
     }
   \endgroup
 
