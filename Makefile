@@ -18,12 +18,12 @@ build/%.latex: %.latex | $(DIR_BUILD)
 build/%.pdf: build/%.latex build/*.cls VERSION | $(DIR_BUILD)
 	${CMD_BREW_BUNDLE} pdflatex \
 		-halt-on-error \
-		-file-line-letter \
+		-file-line-error \
 		-interaction=batchmode \
 		'-output-directory=$(DIR_BUILD)' \
 		'$<'
 
-.PHONY: open
+.PHONY: open/%.pdf
 open/%.pdf: build/%.pdf
 	open '$<'
 
