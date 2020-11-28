@@ -52,8 +52,11 @@
     [2020--present]
 
     \begin{itemize}
-      \item Partner and consult with developers of the Google Ads API beta and
-        ensure successful implementation and migration from Google AdWords API
+      \item Partner and consult with high profile partners and developers of the
+        Google Ads API and ensure successful migration
+        from the Google AdWords API
+
+      \item Contribute samples to Google Ads Client Libraries
 
     \end{itemize}
 
@@ -64,16 +67,14 @@
 
     \begin{itemize}
 
-      \item Created roadmaps, prioritized work, and guided architecture for
-        legacy editorial app, new user-generated content app, SMS-based
-        restaurant recommendation concierge service, and editorialized
-        restaurant finder app.
+      \item Created roadmaps, prioritized work, and designed architecture for
+        legacy Zagat editorial app, new user-generated content app, and
+        editorialized restaurant finder app.
 
-      \item Increased deploy frequency from once a month to several times a
-        day. Updated Kubernetes and Docker image to best practices (e.g.,
-        reduced size of images from \textgreater500mb to \textless20mb).
-        Integrated and optimized CI/CD pipeline on Google Cloud Build, and
-        created local and staging dev environments.
+      \item Designed Kubernetes architecture and Docker images. Reduced size of
+        images from \textgreater500mb to \textless20mb. Led and implemented
+        initiative to increase deploy frequency to several times a day (from
+        once a month).
 
       \item Optimized use of Google Maps API and reduced costs by
         \textdollar20k/month. Integrated Firebase for user identity and
@@ -126,15 +127,15 @@
     \entry
     [Workshop Instructor]
     [NYC Tech Talent Pipeline]
-    [2020--present]
+    [2020]
 
     \begin{itemize}
 
-      \item Delivers data-structures and algorithms focused workshops to
-        address skill and knowledge gaps amongst CUNY and NYC bootcamp
+      \item Delivered data-structures and algorithms focused workshops to
+        address skill and knowledge gaps among CUNY and NYC bootcamp
         students.
 
-      \item Improves workshop curriculum and student selection to maximize
+      \item Improved workshop curriculum and student selection to maximize
         tech industry jobs offered to underrepresented CUNY and bootcamp
         students.
 
