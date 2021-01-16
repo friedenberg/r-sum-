@@ -52,11 +52,12 @@
     [2020--present]
 
     \begin{itemize}
-      \item Partner and consult with high profile partners and developers of the
-        Google Ads API and ensure successful migration
-        from the Google AdWords API
+      \item Partner and consult with large scale users and developers of the
+        Google Ads API
 
       \item Contribute samples to Google Ads Client Libraries
+
+      \item Design and implement dashboard querying audit logs for API and internal tool
 
     \end{itemize}
 
@@ -68,8 +69,8 @@
     \begin{itemize}
 
       \item Created roadmaps, prioritized work, and designed architecture for
-        legacy Zagat editorial app, new user-generated content app, and
-        editorialized restaurant finder app.
+        legacy Zagat, new user-generated content app, and
+        editorialized restaurant finder.
 
       \item Designed Kubernetes architecture and Docker images. Reduced size of
         images from \textgreater500mb to \textless20mb. Led and implemented
@@ -106,19 +107,6 @@
       \item Coordinated across product and engineering to lead and implement
         user timezone settings to ensure push notifications are delivered at
         locale-appropriate times.
-
-    \end{itemize}
-
-    \entry
-    [Release Manager]
-    [Etsy]
-    [2014--2016]
-
-    \begin{itemize}
-      \item Transformed engineering culture by designing and leading execution
-        of a two-week release schedule and a continuous-delivery model of app
-        releases for Etsy Android Buyer, Android Seller, iOS Buyer, and iOS
-        Seller apps.
 
     \end{itemize}
 
