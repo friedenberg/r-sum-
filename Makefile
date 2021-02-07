@@ -16,6 +16,7 @@ build/%.latex: %.latex | $(DIR_BUILD)
 	cp '$<' '$(DIR_BUILD)'
 
 build/%.pdf: build/%.latex build/*.cls VERSION | $(DIR_BUILD)
+	date -u +"%Y-%m" > "$(DIR_BUILD)/DATE_LAST_UPDATED"
 	${CMD_BREW_BUNDLE} pdflatex \
 		-halt-on-error \
 		-file-line-error \
