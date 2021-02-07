@@ -7,7 +7,6 @@
 \usepackage{hyperref}
 \urlstyle{same}
 
-\addtolength{\topmargin}{-.65in}
 \addtolength{\textheight}{1.7in}
 
 % sets default itemsep for itemize
