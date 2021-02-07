@@ -26,7 +26,7 @@ build/%.pdf: build/%.latex build/*.cls VERSION | $(DIR_BUILD)
 
 .PHONY: open/%.pdf
 open/%.pdf: build/%.pdf
-	open -gF '$<'
+	open -F '$<'
 
 .PHONY: clean
 clean:
