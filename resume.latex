@@ -1,7 +1,7 @@
 % LaTeX file for resume 
 % This file uses the resume document class (res.cls)
 
-\documentclass[line,margin]{res} 
+\documentclass[line,margin]{res}
 
 \usepackage{xparse}
 \usepackage{hyperref}
@@ -214,7 +214,7 @@
   \tiny updated \input{DATE_LAST_UPDATED}
   \end{flushright}
 
-\end{document} 
+\end{document}
 
 
 
