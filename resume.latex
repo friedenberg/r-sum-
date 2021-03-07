@@ -62,7 +62,7 @@
 
     \entry
     [Platform Engineer]
-    [The Infatuation / Zagat]
+    [Zagat]
     [2019]
 
     \begin{itemize}
@@ -103,9 +103,12 @@
         using in-house page layout engine allowing API-side control of native
         client experience.
 
-      \item Coordinated across product and engineering to lead and implement
-        user timezone settings to ensure push notifications are delivered at
-        locale-appropriate times.
+      \item Designed and implemented user timezone setting to ensure push
+        notifications are delivered at locale-appropriate times, improving user
+        user experience.
+
+      \item Interviewed entry-level software engineer and engineering intern
+        candidates
 
     \end{itemize}
 
@@ -154,7 +157,6 @@
     {Publications}
 
     \entry
-    [How Etsy Ships Apps]
     [Etsy Engineering Blog, Code as Craft]
     [2017]
 
@@ -162,8 +164,8 @@
 
       \item
         \href
-        {https://sashafriedenberg.com/how-etsy-ships-apps}
-        {https://sashafriedenberg.com/how-etsy-ships-apps}
+        {https://codeascraft.com/2017/05/15/how-etsy-ships-apps/}
+        {https://codeascraft.com/2017/05/15/how-etsy-ships-apps/}
 
     \end{itemize}
 
