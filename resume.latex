@@ -20,7 +20,7 @@
   {
     \IfNoValueTF {#3}
     { {\noindent\bf #1}\dotfill\,#2\par }
-    { {\noindent\bf #1,}\, #2\,\dotfill\,#3\par }
+    { {\noindent\bf #2,}\, #1\,\dotfill\,#3\par }
   }
 
   \raggedright
