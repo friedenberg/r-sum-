@@ -1,6 +1,4 @@
 
-CMD_BREW_BUNDLE := brew bundle exec --no-upgrade --
-
 DIR_BUILD := build/
 
 .PHONY: all
@@ -17,7 +15,7 @@ build/%.latex: %.latex | $(DIR_BUILD)
 
 build/%.pdf: build/%.latex build/*.cls VERSION | $(DIR_BUILD)
 	date -u +"%Y-%m" > "$(DIR_BUILD)/DATE_LAST_UPDATED"
-	${CMD_BREW_BUNDLE} pdflatex \
+	pdflatex \
 		-halt-on-error \
 		-file-line-error \
 		-interaction=batchmode \
