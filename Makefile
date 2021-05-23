@@ -42,17 +42,20 @@ $(DIR_BUILD):
 	mkdir $(DIR_BUILD)
 
 build/%: % | $(DIR_BUILD)
-	cp '$<' '$(DIR_BUILD)'
+	cp '$<' '$@'
 
 build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_PANDOC) \
 		$(OPT_PANDOC_TEMPLATE_HTML) \
 		'$<' -o '$(patsubst %.md,%.html,$<)'
 
-build/%.txt: build/%.md template.txt filter-plain.lua $(FILES_DEPS) | $(DIR_BUILD)
+build/NAME.txt: Makefile
+	figlet -c -fsmslant '$(OPT_NAME)' > '$@'
+
+build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_PANDOC) \
-		--template template.txt \
-		-t filter-plain.lua \
+		--template build/template.txt \
+		-t build/filter-plain.lua \
 		'$<' -o '$(patsubst %.md,%.txt,$<)'
 
 build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
