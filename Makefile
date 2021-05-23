@@ -9,6 +9,8 @@ OPT_EMAIL := $(shell cat EMAIL)
 OPT_VERSION := $(shell cat VERSION)
 OPT_DATE := $(shell date -u +"%Y-%m")
 
+STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
+
 CMD_PANDOC := \
 	pandoc -f markdown \
 	--section-div --self-contained \
@@ -27,8 +29,14 @@ OPT_PANDOC_TEMPLATE_HTML := --template '$(shell pwd)/build/template.html'
 
 FILES_DEPS := VERSION build/style.css Makefile build/template.html
 
+STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
+FILE_OUT_BASE := $(DIR_BUILD)/$(STR_NAME_SNAKE)_resume
+
 .PHONY: all
-all: $(patsubst %.latex,build/%.pdf,$(wildcard *.latex));
+all: $(FILE_OUT_BASE).html $(FILE_OUT_BASE).txt $(FILE_OUT_BASE).pdf;
+
+$(FILE_OUT_BASE).%: $(DIR_BUILD)/resume.%
+	cp '$<' '$@'
 
 $(DIR_BUILD):
 	mkdir $(DIR_BUILD)

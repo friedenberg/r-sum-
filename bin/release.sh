@@ -8,12 +8,16 @@ git push origin master
 
 version="v$(cat ./VERSION)"
 
-make build/resume.pdf
-cp build/resume.pdf build/sasha_friedenberg_resume.pdf
+make
+
+str_snake_case="$(cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")"
+file_out_base="build/${str_snake_case}_resume"
 
 git diff --exit-code -s || (echo "unstaged changes, refusing to release" && exit 1)
 hub release create \
-  -a build/sasha_friedenberg_resume.pdf \
+  -a "$file_out_base.html" \
+  -a "$file_out_base.txt" \
+  -a "$file_out_base.pdf" \
   -m "$version" \
   "$version"
 
