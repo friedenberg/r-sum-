@@ -42,9 +42,9 @@ Etsy Senior Software Engineer                                         2016--2019
 
 # Other Experience
 
------------------------- ------------------- ----------------------------- -----
-NYC Tech Talent Pipeline Workshop Instructor                               2020
------------------------- ------------------- ----------------------------- -----
+------------------------ ------------------- ------------------------------ ----
+NYC Tech Talent Pipeline Workshop Instructor                                2020
+------------------------ ------------------- ------------------------------ ----
 
 - Delivered data-structures and algorithms focused workshops to address skill
   and knowledge gaps among CUNY and NYC bootcamp students.
@@ -77,6 +77,6 @@ Etsy Engineering Blog Code as Craft                                         2017
 
 ----------- --------------------------------------------------------------------
 Languages   Bash, C, Go, Java, Objective-C, PHP, Python, Ruby, SQL
-Platforms   Android, Google Cloud Platform, Web Backend, iOS,
+Platforms   Android, Google Cloud Platform, Web Backend, iOS
 Software    Docker, Git, HTTP, Kubernetes, Linux, Protobufs, Unix
 ----------- --------------------------------------------------------------------
