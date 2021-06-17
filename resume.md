@@ -6,8 +6,13 @@ Google Developer Advocate                                          2020--present
 
 - Partner and consult with the biggest users and developers of the
   Google&nbsp;Ads&nbsp;API and the Google&nbsp;Shopping&nbsp;Content&nbsp;API
+- Design and present webinars. Most recent was on [best practices for migrating
+  to the Google Ads API][migration webinar]
 - Contribute samples to the Google&nbsp;Ads&nbsp;Client&nbsp;Libraries
-- Design and implement dashboard for audit use of the Google&nbsp;Ads&nbsp;API
+- Analyzed Google Ads API and OAuth traffic to determine client library behavior
+  and performance in order to identify latency issues
+- Designed and implemented dashboard for audit use of the
+  Google&nbsp;Ads&nbsp;API
   and internal tools
 
 ----- ----------------- --------------------------------------------------- ----
@@ -29,15 +34,10 @@ Etsy Senior Software Engineer                                         2016--2019
 
 - Improved speed of spell-corrected search results from 700ms to 300ms. Led
   A/B test to prove conversion win.
-- Designed and built Ship, an internal tool that ingests GitHub data and
-  automates app deployments across iTunes&nbsp;Connect, Google&nbsp;Play, email,
-  and Slack. Maintains an audit trail, isolates credentials, and is SOX
-  compliant.
-- Developed holiday search and browse experience for native apps allowing
-  API-side control of native client experience.
-- Designed and implemented user timezone setting to ensure push notifications
-  are delivered at locale-appropriate times, improving user experience, and
-  reducing push notification unsubscribes.
+- Designed and built Ship, a SOX-compliant internal tool that automates app deployments
+  across GitHub, iTunes&nbsp;Connect, Google&nbsp;Play, email, and Slack.
+- Designed and implemented user timezone setting ensuring notifications are
+  delivered at appropriate times, improving UX, and reducing unsubscribes.
 - Interviewed entry-level software engineer and engineering intern candidates
 
 # Other Experience
@@ -54,14 +54,13 @@ NYC Tech Talent Pipeline Workshop Instructor                                2020
 # Volunteering
 
 ----------------------------------------------- ------------------ -------------
-CodeNation, Pursuit, & NYC Tech Talent Pipeline                    2018--present
+CodeNation, Pursuit, & NYC Tech Talent Pipeline                    2018--2020
 ----------------------------------------------- ------------------ -------------
 
-- Develops curriculum for and teaches workshops on using datastructures, problem
-  solving, and big-O time & space complexity to excel at traditional tech
-  whiteboard interviews
-- Conducts mock behavioral and technical interviews for CS students and provides
-  feedback and guidance to help prepare them future tech jobs
+- Developed curriculum for and taught workshops on using datastructures, problem
+  solving, and big-O time and space complexity
+- Conducted mock behavioral and technical interviews for CS students and
+  provided feedback and guidance to help prepare them future tech jobs
 - Mentored Pursuit fellow, providing guidance around job applications,
   whiteboard interviews, and resume preparation
 
@@ -80,3 +79,5 @@ Languages   Bash, C, Go, Java, Objective-C, PHP, Python, Ruby, SQL
 Platforms   Android, Google Cloud Platform, Web Backend, iOS
 Software    Docker, Git, HTTP, Kubernetes, Linux, Protobufs, Unix
 ----------- --------------------------------------------------------------------
+
+[migration webinar]: <https://www.youtube.com/watch?v=2QaNf-JGCGU>
