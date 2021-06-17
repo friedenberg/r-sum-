@@ -34,8 +34,9 @@ Etsy Senior Software Engineer                                         2016--2019
 
 - Improved speed of spell-corrected search results from 700ms to 300ms. Led
   A/B test to prove conversion win.
-- Designed and built Ship, a SOX-compliant internal tool that automates app deployments
-  across GitHub, iTunes&nbsp;Connect, Google&nbsp;Play, email, and Slack.
+- Designed and built Ship, a SOX-compliant internal tool that automates app
+  deployments across GitHub, iTunes&nbsp;Connect, Google&nbsp;Play, email, and
+  Slack.
 - Designed and implemented user timezone setting ensuring notifications are
   delivered at appropriate times, improving UX, and reducing unsubscribes.
 - Interviewed entry-level software engineer and engineering intern candidates
