@@ -10,6 +10,10 @@ body {
   margin: auto;
 }
 
+code {
+  font-family: "Andale Mono";
+}
+
 .debug div, .debug table {
   border: 1px solid red;
 }
@@ -84,6 +88,31 @@ ul {
 
 li {
   margin-block-start: 3pt;
+}
+
+ul.columns {
+  columns: 2;
+  column-width: 33ch;
+}
+
+.columns li {
+  list-style-type: circle;
+}
+
+/* .column:first-child { */
+/*   margin-right: 0; */
+/* } */
+
+.columns {
+  margin-left: 1.5em;
+}
+
+* {
+  margin-bottom: unset;
+}
+
+table {
+  margin-top: 1em;
 }
 
 .level2:not(.no-table-leader) td:nth-of-type(1) {

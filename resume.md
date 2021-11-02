@@ -6,14 +6,26 @@ Google Developer Advocate                                          2020--present
 
 - Partner and consult with the biggest users and developers of the
   Google&nbsp;Ads&nbsp;API and the Google&nbsp;Shopping&nbsp;Content&nbsp;API
-- Design and present webinars. Most recent was on [best practices for migrating
-  to the Google Ads API][migration webinar]
-- Contribute samples to the Google&nbsp;Ads&nbsp;Client&nbsp;Libraries
-- Analyzed Google Ads API and OAuth traffic to determine client library behavior
-  and performance in order to identify latency issues
-- Designed and implemented dashboard for audit use of the
-  Google&nbsp;Ads&nbsp;API
-  and internal tools
+- Design and present webinars, workshops, and trivia.
+
+:::::: {.columns}
+::: {.column}
+  - [Migrating to the Google Ads API][21Q2-migration-webinar]
+  - [Flexible Reporting][21Q3-workshop-flexible_reporting]
+:::
+::: {.column}
+  - [Creating a Migration Plan][21Q3-workshop-migration_planning]
+  - [Trivia][21Q3-workshop-trivia]
+:::
+::::::
+
+- Contribute samples to the Google&nbsp;Ads&nbsp;Client&nbsp;Libraries (PHP,
+  .NET)
+- Analyzed Google Ads API and OAuth traffic to determined client library
+  behavior and performance in order to identify latency issues
+- Designed and implemented dashboard for auditing Google&nbsp;Ads&nbsp;API
+  suppport and internal tools
+- Interview prospective Developer Relations Engineer candidates
 
 ----- ----------------- --------------------------------------------------- ----
 Zagat Platform Engineer                                                     2019
@@ -40,6 +52,7 @@ Etsy Senior Software Engineer                                         2016--2019
 - Designed and implemented user timezone setting ensuring notifications are
   delivered at appropriate times, improving UX, and reducing unsubscribes.
 - Interviewed entry-level software engineer and engineering intern candidates
+- Authored [codeascraft.com/2017/05/15/how-etsy-ships-apps/][17Q2-ship-cac]
 
 # Other Experience
 
@@ -65,13 +78,6 @@ CodeNation, Pursuit, & NYC Tech Talent Pipeline                    2018--2020
 - Mentored Pursuit fellow, providing guidance around job applications,
   whiteboard interviews, and resume preparation
 
-# Publications
-
---------------------- ------------- --------------------------------------- ----
-Etsy Engineering Blog Code as Craft                                         2017
---------------------- ------------- --------------------------------------- ----
-
-- <https://codeascraft.com/2017/05/15/how-etsy-ships-apps/>
 
 # Proficiencies {.no-table-leader}
 
@@ -81,4 +87,8 @@ Platforms   Android, Google Cloud Platform, Web Backend, iOS
 Software    Docker, Git, HTTP, Kubernetes, Linux, Protobufs, Unix
 ----------- --------------------------------------------------------------------
 
-[migration webinar]: <https://www.youtube.com/watch?v=2QaNf-JGCGU>
+[21Q2-migration-webinar]: <https://youtu.be/2QaNf-JGCGU>
+[21Q3-workshop-flexible_reporting]: <https://youtu.be/cr4aMA5EXNs>
+[21Q3-workshop-migration_planning]: <https://youtu.be/DytgwBqF9Fw>
+[21Q3-workshop-trivia]: <https://youtu.be/mtGn0PZi63I>
+[17Q2-ship-cac]: <https://codeascraft.com/2017/05/15/how-etsy-ships-apps/>
