@@ -144,7 +144,7 @@ function Strikeout(s)
 end
 
 function Link(s, tgt, tit, attr)
-  return s
+  return "[" .. s .. "](" .. tgt .. ")"
   -- return "<a href='" .. escape(tgt,true) .. "' title='" ..
   --        escape(tit,true) .. "'>" .. s .. "</a>"
 end
@@ -348,7 +348,8 @@ function RawBlock(format, str)
 end
 
 function Div(s, attr)
-  return "<div" .. attributes(attr) .. ">\n" .. s .. "</div>"
+  return s
+  -- return "<div" .. attributes(attr) .. ">\n" .. s .. "</div>"
 end
 
 -- The following code will produce runtime warnings when you haven't defined
