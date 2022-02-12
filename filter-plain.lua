@@ -144,6 +144,7 @@ function Strikeout(s)
 end
 
 function Link(s, tgt, tit, attr)
+  -- TODO wrap if too long
   return "[" .. s .. "](" .. tgt .. ")"
   -- return "<a href='" .. escape(tgt,true) .. "' title='" ..
   --        escape(tit,true) .. "'>" .. s .. "</a>"
