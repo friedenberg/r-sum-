@@ -1,4 +1,4 @@
-#! /bin/bash -e
+#! /bin/bash -xe
 
 ${EDITOR:-${VISUAL:-vi}} ./VERSION
 git add ./VERSION
