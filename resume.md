@@ -1,32 +1,45 @@
-# Related Experience
+# Experience
 
------- ------------------ ---------------------------------------- -------------
-Google Developer Advocate                                          2020--present
------- ------------------ ---------------------------------------- -------------
+------ ------------------------- --------------------------------- -------------
+Asana  Senior Developer Advocate                                   2022--present
+------ ------------------------- --------------------------------- -------------
 
-- Partner and consult with the biggest users and developers of the
+- Designing a scaleable API Changeset release and deprecation process as the
+  product and engineering organizations 5x their API contributions
+
+------ ------------------ ------------------------------------------- ----------
+Google Developer Advocate                                             2020--2022
+------ ------------------ ------------------------------------------- ----------
+
+- Partnered and consulted with the biggest users and developers of the
   Google&nbsp;Ads&nbsp;API and the Google&nbsp;Shopping&nbsp;Content&nbsp;API
-- Design and present webinars, workshops, and trivia.
-
-:::::: {.columns}
-::: {.column}
-  - [Migrating to the Google Ads API][21Q2-migration-webinar]
-  - [Flexible Reporting][21Q3-workshop-flexible_reporting]
-  - [Change History Video Series][21Q4-community-content-playlist]
-:::
-::: {.column}
-  - [Creating a Migration Plan][21Q3-workshop-migration_planning]
-  - [Trivia][21Q3-workshop-trivia]
-:::
-::::::
-
-- Contribute samples to the Google&nbsp;Ads&nbsp;Client&nbsp;Libraries (PHP,
+- Contributed samples to the Google&nbsp;Ads&nbsp;Client&nbsp;Libraries (PHP,
   .NET)
 - Analyzed Google Ads API and OAuth traffic to determined client library
   behavior and performance in order to identify latency issues
-- Designed and implemented dashboard for auditing Google&nbsp;Ads&nbsp;API
-  support and internal tools
-- Interview prospective Developer Relations Engineer candidates
+- Created dashboard for auditing Google&nbsp;Ads&nbsp;API support and internal
+  tools
+- Interviewed prospective Developer Relations Engineer candidates
+
+:::::: {.columns}
+::: {.column}
+- [Migrating to the Google Ads API][21Q2-migration-webinar]
+- [Flexible Reporting][21Q3-workshop-flexible_reporting]
+:::
+::: {.column}
+- [Change History Video Series][21Q4-community-content-playlist]
+- [Creating a Migration Plan][21Q3-workshop-migration_planning]
+:::
+::::::
+
+------------------------ ------------------- ------------------------------ ----
+NYC Tech Talent Pipeline Workshop Instructor                                2020
+------------------------ ------------------- ------------------------------ ----
+
+- Delivered data-structures and algorithms focused workshops to address skill
+  and knowledge gaps among CUNY and NYC bootcamp students.
+- Improved workshop curriculum and student selection to maximize tech industry
+  jobs offered to underrepresented CUNY and bootcamp students.
 
 ----- ----------------- --------------------------------------------------- ----
 Zagat Platform Engineer                                                     2019
@@ -50,20 +63,8 @@ Etsy Senior Software Engineer                                         2016--2019
   Google&nbsp;Play, email, and Slack.
 - Designed and implemented user timezone setting ensuring notifications are
   delivered at appropriate times, improving UX, and reducing unsubscribes.
-- Interviewed entry-level software engineer and engineering intern candidates
 
-# Other Experience
-
------------------------- ------------------- ------------------------------ ----
-NYC Tech Talent Pipeline Workshop Instructor                                2020
------------------------- ------------------- ------------------------------ ----
-
-- Delivered data-structures and algorithms focused workshops to address skill
-  and knowledge gaps among CUNY and NYC bootcamp students.
-- Improved workshop curriculum and student selection to maximize tech industry
-  jobs offered to underrepresented CUNY and bootcamp students.
-
-# Volunteering
+# Volunteering {.no-trailing-comma}
 
 ----------------------------------------------- --------------------- ----------
 CodeNation, Pursuit, & NYC Tech Talent Pipeline                       2018--2020
@@ -78,12 +79,13 @@ CodeNation, Pursuit, & NYC Tech Talent Pipeline                       2018--2020
 
 # Expertise & Proficiencies {.no-table-leader}
 
---------------- ----------------------------------------------------------------
-Mobile Releases [Ship Retrospective Interview with Runway][22Q1-runway-interview]
-Languages       Bash, C, Go, Java, Objective-C, PHP, Python, Ruby, SQL
-Platforms       Android, Google Cloud Platform, Web Backend, iOS
-Software        Docker, Git, GRPC, HTTP, Kubernetes, Linux, Protobufs, Unix
---------------- ----------------------------------------------------------------
+---------------- ---------------------------------------------------------------
+Interviewer      Managers, Engineers, Interns. Behavior and technical.
+Mobile Releases  [Ship Retrospective Interview with Runway][22Q1-runway-interview]
+Languages        Bash, C, Go, Java, Objective-C, PHP, Python, Ruby, SQL
+Platforms        Android, Google Cloud Platform, Web Backend, iOS
+Software         Docker, Git, GRPC, HTTP, Kubernetes, Linux, Protobufs, Unix
+---------------- ---------------------------------------------------------------
 
 [17Q2-ship-cac]: <https://codeascraft.com/2017/05/15/how-etsy-ships-apps/>
 [21Q2-migration-webinar]: <https://youtu.be/2QaNf-JGCGU>

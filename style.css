@@ -119,8 +119,11 @@ table {
   font-weight: bold;
 }
 
-.level2:not(.no-table-leader) td:nth-of-type(1)::after {
+.level2:not(.no-table-leader):not(.no-trailing-comma) td:nth-of-type(1)::after {
   content: ",";
+}
+
+.level2:not(.no-table-leader) td:nth-of-type(1)::after {
   font-weight: normal;
 }
 
