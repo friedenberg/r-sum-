@@ -55,12 +55,16 @@ build/NAME.txt: Makefile
 build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_PANDOC) \
 		--template build/template.txt \
+		--reference-links \
 		-t build/filter-plain.lua \
 		'$<' -o '$(patsubst %.md,%.txt,$<)'
 
 build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
-	$(CMD_CHROME) --headless --disable-gpu \
-		'--print-to-pdf=$(patsubst %.html,%.pdf,$<)' --print-to-pdf-no-header \
+	$(CMD_CHROME) \
+		--headless \
+		--disable-gpu \
+		'--print-to-pdf=$(patsubst %.html,%.pdf,$<)' --no-pdf-header-footer \
+		--print-to-pdf-no-header \
 		'$<'
 
 .PHONY: clean

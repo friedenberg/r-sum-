@@ -2,10 +2,12 @@
 body {
   --font-size: 10pt;
   --padding: 0ch;
+  /* --right-width: 88ch; */
   --right-width: 66ch;
   --left-width: 20ch;
   --full-width: calc(var(--left-width) + var(--padding) + var(--right-width));
   font-family: Georgia;
+  /* font-family: "Officina Sans ITC Pro"; */
   font-size: var(--font-size);
   margin: auto;
 }
@@ -25,23 +27,14 @@ header, hr {
 }
 
 hr {
-    border: none;
-    border-top: 1pt solid #333;
-    color: #333;
+  border: none;
+  border-top: 1pt solid #333;
+  color: #333;
 }
 
 div.wrapper {
   margin: auto;
   width: var(--full-width);
-  display: flex;
-}
-
-div.box1 {
-  flex: 3;
-}
-
-div.box2 {
-  flex: 7;
 }
 
 section {
@@ -66,7 +59,7 @@ h1, p {
 }
 
 h2 {
-  text-transform: capitalize;
+  text-transform: uppercase;
   position: absolute;
   margin: 0pt;
   left: calc(-2ch - var(--left-width) + var(--padding));
@@ -87,24 +80,13 @@ ul {
 }
 
 li {
+  break-inside: avoid;
   margin-block-start: 3pt;
 }
 
-ul.columns {
+*:not(li) > ul {
   columns: 2;
-  column-width: 33ch;
-}
-
-.columns li {
-  list-style-type: circle;
-}
-
-/* .column:first-child { */
-/*   margin-right: 0; */
-/* } */
-
-.columns {
-  margin-left: 1.5em;
+  column-gap: 3ch;
 }
 
 * {
@@ -138,10 +120,13 @@ table {
   ". . . . . . . . . . . . . . . . . . . . "
   ". . . . . . . . . . . . . . . . . . . . "
   ". . . . . . . . . . . . . . . . . . . . "
+  ". . . . . . . . . . . . . . . . . . . . "
+  ". . . . . . . . . . . . . . . . . . . . "
   ;
   text-align: justify;
   overflow: hidden;
   height: calc(var(--font-size) + 1pt);
+  /* height: calc(var(--font-size) + 3pt); */
   display: block;
   white-space: break-spaces;
 }
