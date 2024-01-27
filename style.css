@@ -1,14 +1,33 @@
 
-body {
+* {
   --font-size: 10pt;
-  --padding: 0ch;
-  /* --right-width: 88ch; */
+  --font-size-position: calc(var(--font-size) + 1pt);
+
+  --gap-horizontal: 0ch;
+  --gap-vertical: 6pt;
+  --gap-list-vertical: 4pt;
+
   --right-width: 66ch;
   --left-width: 20ch;
-  --full-width: calc(var(--left-width) + var(--padding) + var(--right-width));
+  --full-width: calc(var(--left-width) + var(--gap-horizontal) + var(--right-width));
+
+  --rule-color: #333;
+  --rule-style: solid;
+  --rule-width: 0.5pt;
+  --rule: var(--rule-width) var(--rule-style) var(--rule-color);
+
+  --debug-border: 1px solid blue;
+
+  margin: 0;
+  padding: 0;
   font-family: Georgia;
   /* font-family: "Officina Sans ITC Pro"; */
   font-size: var(--font-size);
+
+  /* counter-reset: pageNumber 1; */
+}
+
+body {
   margin: auto;
 }
 
@@ -28,29 +47,47 @@ header, hr {
 
 hr {
   border: none;
-  border-top: 1pt solid #333;
-  color: #333;
+  border-top: var(--rule);
+  color: var(--rule-color);
 }
 
-div.wrapper {
-  margin: auto;
+.omit {
+  visibility: collapse;
+}
+
+body > * {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--gap-vertical);
+  padding-bottom: var(--gap-vertical);
   width: var(--full-width);
 }
 
-section {
-  position: relative;
+body > :not(:last-child) {
+  border-bottom: var(--rule);
+}
+
+section.level3 {
+  padding-top: var(--gap-vertical);
+  padding-bottom: var(--gap-vertical);
+  break-inside: avoid;
 }
 
 section.debug > section {
-  border: 1px solid blue;
+  border: var(--debug-border);
 }
 
-h1 {
+.title, header td {
   font-size: calc(var(--font-size) + 2pt);
+  font-weight: 600;
 }
 
 .debug h2 {
   border: 1px solid black;
+}
+
+span.skill-interviews {
+  font-weight: 600;
 }
 
 h1, p {
@@ -60,62 +97,63 @@ h1, p {
 
 h2 {
   text-transform: uppercase;
-  position: absolute;
-  margin: 0pt;
-  left: calc(-2ch - var(--left-width) + var(--padding));
-  bottom: auto;
   font-size: inherit;
-  width: var(--left-width);
-  height: var(--font-size);
-  padding: 2pt;
+}
+
+span.todo {
+  padding: 3px;
+  color: red;
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+span.todo::before {
+  content:
+  "todo!"
+  ;
 }
 
 table {
+  font-size: calc(var(--font-size-position));
+  margin-bottom: var(--gap-vertical);
+  border-collapse: collapse;
   table-layout: auto;
   width: 100%;
 }
 
-ul {
-  margin-block-start: 0px;
-}
+/*  ____           _ _   _                 */
+/* |  _ \ ___  ___(_) |_(_) ___  _ __  ___ */
+/* | |_) / _ \/ __| | __| |/ _ \| '_ \/ __|*/
+/* |  __/ (_) \__ \ | |_| | (_) | | | \__ \*/
+/* |_|   \___/|___/_|\__|_|\___/|_| |_|___/*/
+/*                                         */
 
-li {
-  break-inside: avoid;
-  margin-block-start: 3pt;
-}
-
-*:not(li) > ul {
-  columns: 2;
-  column-gap: 3ch;
-}
-
-* {
-  margin-bottom: unset;
-}
-
-table {
-  margin-top: 1em;
-}
-
-.level2:not(.no-table-leader) td:nth-of-type(1) {
-  font-weight: bold;
-}
-
-.level2:not(.no-table-leader):not(.no-trailing-comma) td:nth-of-type(1)::after {
-  content: ",";
-}
-
-.level2:not(.no-table-leader) td:nth-of-type(1)::after {
-  font-weight: normal;
-}
-
-.level2:not(.no-table-leader) td:not(:nth-last-child(2)) {
-  width: 1%;
+.table-leader .level3 td {
+  font-size: var(--font-size-position);
   white-space: nowrap;
 }
 
-.level2:not(.no-table-leader) td:nth-last-child(2)::before {
-  /* user-select: none; */
+.table-leader .level3 td:not(:first-child) {
+  padding-left: 2pt;
+}
+
+.table-leader .level3 td:not(:last-child) {
+  padding-right: 2pt;
+}
+
+.table-leader .level3 td:nth-of-type(1) {
+  font-weight: bold;
+}
+
+.table-leader .level3 td:nth-of-type(1)::after {
+  content: ",";
+}
+
+.table-leader .level3 td:nth-of-type(1)::after {
+  font-weight: normal;
+}
+
+.table-leader .level3 td:nth-last-child(2)::before {
   content:
   ". . . . . . . . . . . . . . . . . . . . "
   ". . . . . . . . . . . . . . . . . . . . "
@@ -125,14 +163,39 @@ table {
   ;
   text-align: justify;
   overflow: hidden;
-  height: calc(var(--font-size) + 1pt);
-  /* height: calc(var(--font-size) + 3pt); */
+  height: calc(var(--font-size-position) + 1pt);
   display: block;
   white-space: break-spaces;
 }
 
-.resume-footer {
-  margin-top: 4pt;
+footer {
   font-size: x-small;
   text-align: center;
+}
+
+/*  _     _     _       */
+/* | |   (_)___| |_ ___ */
+/* | |   | / __| __/ __|*/
+/* | |___| \__ \ |_\__ \*/
+/* |_____|_|___/\__|___/*/
+/*                      */
+
+ul {
+  /* margin-block-start: 0px; */
+  padding-left: 20pt;
+}
+
+li {
+  break-inside: avoid;
+  margin-block-end: var(--gap-list-vertical);
+}
+
+li > ul {
+  margin-block-start: var(--gap-list-vertical);
+}
+
+/* ul that have more than one child */
+section.columns-two.level3 > ul, .columns-two .level3 > ul {
+  column-gap: 14pt;
+  columns: 2;
 }
