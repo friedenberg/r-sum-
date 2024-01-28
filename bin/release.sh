@@ -10,11 +10,11 @@ version="v$(cat ./VERSION)"
 
 make
 
-str_snake_case="$(cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")"
+str_snake_case="$(tr "[:upper:]" "[:lower:]" < NAME | tr " " "_")"
 file_out_base="build/${str_snake_case}_resume"
 
 git diff --exit-code -s || (echo "unstaged changes, refusing to release" && exit 1)
-hub release create \
+GITHUB_TOKEN="$(gpg --decrypt ~/.config/hub.secret)" hub release create \
   -a "$file_out_base.html" \
   -a "$file_out_base.txt" \
   -a "$file_out_base.pdf" \
