@@ -7,7 +7,7 @@ OPT_NAME := $(shell cat NAME)
 OPT_PHONE := $(shell cat PHONE)
 OPT_EMAIL := $(shell cat EMAIL)
 OPT_VERSION := $(shell cat VERSION)
-OPT_DATE := $(shell date -u +"%Y-%m")
+OPT_DATE := $(shell date -u +"%b %Y")
 
 STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
 
@@ -62,16 +62,16 @@ build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua
 		-t build/filter-plain.lua \
 		'$<' -o '$(patsubst %.md,%.txt,$<)'
 
-build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
+build/%.weasyprint.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
 	weasyprint '$<' '$@'
 
-# build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
-# 	$(CMD_CHROME) \
-# 		--headless \
-# 		--disable-gpu \
-# 		'--print-to-pdf=$(patsubst %.html,%.pdf,$<)' --no-pdf-header-footer \
-# 		--print-to-pdf-no-header \
-# 		'$<'
+build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
+	$(CMD_CHROME) \
+		--headless \
+		--disable-gpu \
+		'--print-to-pdf=$(patsubst %.html,%.pdf,$<)' --no-pdf-header-footer \
+		--print-to-pdf-no-header \
+		'$<'
 
 .PHONY: clean
 clean:

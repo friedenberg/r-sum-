@@ -1,10 +1,10 @@
 #  {#section .table-leader .padding-bottom .columns-two}
 
-##  {.columns-two}
+##
 
-  ---------------- ------------------ -- --------------------
-  Recurse Center   Engineer, Mentor        2023-08 -- present
-  ---------------- ------------------ -- --------------------
+  ---------------- ------------------ -- ---------------------
+  Recurse Center   Engineer, Mentor        Aug 2023 -- present
+  ---------------- ------------------ -- ---------------------
 
 -   Developing a git-like knowledge management system in Go and Rust
     -   Merge using best-common-ancestor algorithm
@@ -22,11 +22,11 @@
     -   Advent of Code in OCaml, Go, and Rust
     -   Conway's Game of Life in Bash
 
-##  {.columns-two}
+##
 
-  ------- --------------------------- -- --------------------
-  Asana   Senior Developer Advocate        2022-05 -- 2023-07
-  ------- --------------------------- -- --------------------
+  ------- --------------------------- -- ---------------------
+  Asana   Senior Developer Advocate       May 2022 -- Jul 2023
+  ------- --------------------------- -- ---------------------
 
 -   Designed scaleable API release process as API contributions increased by 5×
 -   Coordinated and managed all API releases, both internally and externally
@@ -39,11 +39,11 @@
 -   Mentored junior Developer Advocate and prepared them for transition to
     software engineer
 
-##  {.columns-two}
+##
 
-  -------- -------------------- -- --------------------
-  Google   Developer Advocate        2020-03 -- 2022-05
-  -------- -------------------- -- --------------------
+  -------- -------------------- -- ----------------------
+  Google   Developer Advocate        Mar 2020 -- May 2022
+  -------- -------------------- -- ----------------------
 
 -   Partnered and consulted with biggest users and developers of the
     Google Ads API and the Google Shopping Content API (e.g., eBay)
@@ -63,11 +63,11 @@
     -   [Creating a Migration Plan](https://youtu.be/DytgwBqF9Fw)
     -   [Trivia](https://youtu.be/mtGn0PZi63I)
 
-##  {.columns-two}
+##
 
-  -------------------------- --------------------------------- -- --------------------
-  NYC Tech Talent Pipeline   Workshop Instructor (part-time)        2020-01 -- 2020-08
-  -------------------------- --------------------------------- -- --------------------
+  -------------------------- --------------------------------- -- ----------------------
+  NYC Tech Talent Pipeline   Workshop Instructor (part-time)        Jan 2020 -- Aug 2020
+  -------------------------- --------------------------------- -- ----------------------
 
 -   Designed and taught three different data-structures and algorithms focused
     workshops to address skill and knowledge gaps among CUNY and NYC bootcamp
@@ -82,11 +82,11 @@
 -   [Performed technical and behavioral interviews]{.skill-interview} for
     admission into talent pipeline
 
-##  {.columns-two}
+##
 
-  ------- ------------------- -- --------------------
-  Zagat   Platform Engineer        2019-04 -- 2019-12
-  ------- ------------------- -- --------------------
+  ------- ------------------- -- ----------------------
+  Zagat   Platform Engineer        Apr 2019 -- Dec 2019
+  ------- ------------------- -- ----------------------
 
 -   Created roadmaps, prioritized work, and designed architecture for legacy
     Zagat, new user-generated content app, and editorialized restaurant finder.
@@ -105,9 +105,9 @@
 
 ## 
 
-  ------ -------------------------- -- --------------------
-  Etsy   Senior Software Engineer        2019-01 -- 2019-04
-  ------ -------------------------- -- --------------------
+  ------ -------------------------- -- ----------------------
+  Etsy   Senior Software Engineer        Jan 2019 -- Apr 2019
+  ------ -------------------------- -- ----------------------
 
 -   Improved speed of spell-corrected search results API by 300ms from 700 ms
     and led A/B test using in-house experimentation platform to prove conversion
@@ -123,9 +123,9 @@
 
 ## 
 
-  ------------------------------------------------- ----------- -- --------------------
-  CodeNation, Pursuit, & NYC Tech Talent Pipeline   Volunteer        2018-04 -- 2019-12
-  ------------------------------------------------- ----------- -- --------------------
+  ------------------------------------------------- ----------- -- ----------------------
+  CodeNation, Pursuit, & NYC Tech Talent Pipeline   Volunteer        Apr 2018 -- Dec 2019
+  ------------------------------------------------- ----------- -- ----------------------
 
 -   Developed curriculum for and taught workshops on using data-structures,
     problem solving, and big-O time and space complexity
@@ -134,11 +134,11 @@
 -   Mentored Pursuit fellow, providing guidance around job applications,
     whiteboard interviews, and resume preparation
 
-## {.columns-two}
+##
 
-  ------ ------------------- -- --------------------
-  Etsy   Software Engineer        2016-06 -- 2019-01
-  ------ ------------------- -- --------------------
+  ------ ------------------- -- ----------------------
+  Etsy   Software Engineer        Jun 2016 -- Jan 2019
+  ------ ------------------- -- ----------------------
 
 -   Developed holiday search and browse experience using in-house page layout
     engine allowing API-side control of native client experience
@@ -165,11 +165,11 @@
 -   [Interviewed entry-level software engineers and engineering
     interns]{.skill-interviews}
 
-## {.columns-two}
+##
 
-  ------ ----------------- -- --------------------
-  Etsy   Release Manager        2014-01 -- 2016-06
-  ------ ----------------- -- --------------------
+  ------ ----------------- -- ----------------------
+  Etsy   Release Manager        Jan 2014 -- Jun 2016
+  ------ ----------------- -- ----------------------
 
 -   Transformed engineering culture by pioneering a two-week release schedule
     and a continuous-delivery model of app releases
@@ -180,25 +180,3 @@
 -   Designed and built a UI to allow iOS engineers to selectively enable /
     disable features in the iOS app to improve ease of testing
 -   [Interviewed engineering managers]{.skill-interviews}
-
-```{=html}
-<!-- ##  {#section-10 .omit} -->
-```
-```{=html}
-<!--   ------ ------------ -- -------------------- -->
-```
-```{=html}
-<!--   Etsy   QA Analyst        2013-10 -- 2014-01 -->
-```
-```{=html}
-<!--   ------ ------------ -- -------------------- -->
-```
-```{=html}
-<!-- -   I performed manual testing and wrote automated functional tests for iOS and -->
-```
-```{=html}
-<!--     Android. Additionally, I acted as project manager for several concurrent -->
-```
-```{=html}
-<!--     releases by managing and preparing JIRA. -->
-```
