@@ -44,6 +44,9 @@ $(DIR_BUILD):
 build/%: % | $(DIR_BUILD)
 	cp '$<' '$@'
 
+build/style.css: style.scss | $(DIR_BUILD)
+	nix-shell -p sass --run "sass '$<' '$@'"
+
 build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_PANDOC) \
 		$(OPT_PANDOC_TEMPLATE_HTML) \
@@ -60,12 +63,15 @@ build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua
 		'$<' -o '$(patsubst %.md,%.txt,$<)'
 
 build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
-	$(CMD_CHROME) \
-		--headless \
-		--disable-gpu \
-		'--print-to-pdf=$(patsubst %.html,%.pdf,$<)' --no-pdf-header-footer \
-		--print-to-pdf-no-header \
-		'$<'
+	weasyprint '$<' '$@'
+
+# build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
+# 	$(CMD_CHROME) \
+# 		--headless \
+# 		--disable-gpu \
+# 		'--print-to-pdf=$(patsubst %.html,%.pdf,$<)' --no-pdf-header-footer \
+# 		--print-to-pdf-no-header \
+# 		'$<'
 
 .PHONY: clean
 clean:
