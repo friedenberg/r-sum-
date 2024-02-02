@@ -57,12 +57,12 @@ build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 build/NAME.txt: Makefile
 	figlet -c -fsmslant '$(OPT_NAME)' > '$@'
 
-build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain2.lua $(FILES_DEPS) | $(DIR_BUILD)
+build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_PANDOC) \
 		--template build/template.txt \
 		--reference-links \
-		--columns 60 \
-		--lua-filter build/filter-plain2.lua \
+		--columns 80 \
+		--lua-filter build/filter-plain.lua \
 		--to markdown \
 		'$<' -o '$(patsubst %.md,%.txt,$<)'
 
