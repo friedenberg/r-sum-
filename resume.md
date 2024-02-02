@@ -1,18 +1,11 @@
-#  {#section .table-leader .padding-bottom .columns-two}
+#  {#section .table-leader .padding-bottom}
 
 ##
 
-  ---------------- ------------------ -- ---------------------
-  Recurse Center   Engineer, Mentor        Aug 2023 -- present
-  ---------------- ------------------ -- ---------------------
+  ---------------- ------------------ -- --------------------
+  Recurse Center   Engineer, Mentor       Aug 2023 -- present
+  ---------------- ------------------ -- --------------------
 
--   Developing a git-like knowledge management system in Go and Rust
-    -   Merge using best-common-ancestor algorithm
-    -   Custom binary format for index
-    -   Custom Go string implementation to reduce memory overhead of frequent
-        string allocations and garbage collection during (de-)serialization
-    -   Custom SQL-like query parser
-    -   Unix domain socket based pull / push
 -   Mentoring three engineers and [preparing them for behavioral and technical
     interviews]{.skill-interviews}
 -   Paired with junior and senior engineers
@@ -24,18 +17,14 @@
 
 ##
 
-  ------- --------------------------- -- ---------------------
-  Asana   Senior Developer Advocate       May 2022 -- Jul 2023
-  ------- --------------------------- -- ---------------------
+  ------- --------------------------- -- ----------------------
+  Asana   Senior Developer Advocate        May 2022 -- Jul 2023
+  ------- --------------------------- -- ----------------------
 
 -   Designed scaleable API release process as API contributions increased by 5×
 -   Coordinated and managed all API releases, both internally and externally
 -   Maintained relationships with key partners responsible for majority of
     traffic
--   Consulted for all API changes, including API token changes and domain-wide
-    permissions changes
--   Developed tooling for generating OpenAPI Spec directly from Scala and
-    existing OpenAPI Spec
 -   Mentored junior Developer Advocate and prepared them for transition to
     software engineer
 
@@ -50,10 +39,6 @@
 -   Contributed samples to the Google Ads Client Libraries (PHP, .NET)
 -   Point-of-Contact for major ML-based Google Ads feature (Performance Max ads
     campaigns)
--   Analyzed Google Ads API and OAuth traffic to identify latency issues in new
-    client libraries using custom sql-like analytics database
--   Created dashboard for auditing Google Ads API support and internal tools
-    using Python / SQL / Kubernetes
 -   [Interviewed engineers]{.skill-interviews}
 -   Produced videos and workshops
     -   [Migrating to the Google Ads API](https://youtu.be/2QaNf-JGCGU)
@@ -79,8 +64,8 @@
 -   Analyzed performance of 68 candidates' written coding assignments and
     developed curriculum based on knowledge gaps to prepare them for technical
     interviews
--   [Performed technical and behavioral interviews]{.skill-interview} for
-    admission into talent pipeline
+-   [Performed technical and behavioral interviews for admission into talent
+    pipeline]{.skill-interviews}
 
 ##
 
@@ -88,26 +73,42 @@
   Zagat   Platform Engineer        Apr 2019 -- Dec 2019
   ------- ------------------- -- ----------------------
 
--   Created roadmaps, prioritized work, and designed architecture for legacy
-    Zagat, new user-generated content app, and editorialized restaurant finder.
 -   Designed Kubernetes architecture and Docker images. Reduced size of images
     from \>500mb to \<20mb. Led and implemented initiative to increase deploy
     frequency to several times a day (from once a month).
 -   Optimized use of Google Maps API and reduced costs by \$20k/month.
     Integrated Firebase for user identity and sign-in. Integrated Stackdriver
     logging and metrics. Integrated Google CloudSQL.
--   Responsible for prioritizing and guiding work on zagat.com (legacy and new
-    UGC product)
--   Responsible for roadmapping MVP, Beta, and launch of new UGC product
--   Developed staging and local development environment for a mixed codebase
-    (legacy and new product)
 -   [Interviewed product managers and engineering managers]{.skill-interviews}
+
+## 
+
+  ------------------------------------------------- ----------- -- ----------------------
+  CodeNation, Pursuit, & NYC Tech Talent Pipeline   Volunteer        Apr 2018 -- Dec 2019
+  ------------------------------------------------- ----------- -- ----------------------
+
+-   Developed curriculum for and taught workshops on using data-structures,
+    problem solving, and big-O time and space complexity
+-   [Conducted mock behavioral and technical interviews for CS
+    students]{.skill-interviews} and
+    provided feedback and guidance to help prepare them future tech jobs
+-   Mentored Pursuit fellow, providing guidance around job applications,
+    whiteboard interviews, and resume preparation
 
 ## 
 
   ------ -------------------------- -- ----------------------
   Etsy   Senior Software Engineer        Jan 2019 -- Apr 2019
   ------ -------------------------- -- ----------------------
+
+  ------ ------------------- -- ----------------------
+  Etsy   Software Engineer        Jun 2016 -- Jan 2019
+  ------ ------------------- -- ----------------------
+
+  ------ ----------------- -- ----------------------
+  Etsy   Release Manager        Jan 2014 -- Jun 2016
+  ------ ----------------- -- ----------------------
+
 
 -   Improved speed of spell-corrected search results API by 300ms from 700 ms
     and led A/B test using in-house experimentation platform to prove conversion
@@ -120,25 +121,6 @@
 -   Coordinated across product and engineering to lead and implement user
     timezone settings to ensure push notifications are delivered at
     locale-appropriate times
-
-## 
-
-  ------------------------------------------------- ----------- -- ----------------------
-  CodeNation, Pursuit, & NYC Tech Talent Pipeline   Volunteer        Apr 2018 -- Dec 2019
-  ------------------------------------------------- ----------- -- ----------------------
-
--   Developed curriculum for and taught workshops on using data-structures,
-    problem solving, and big-O time and space complexity
--   Conducted mock behavioral and technical interviews for CS students and
-    provided feedback and guidance to help prepare them future tech jobs
--   Mentored Pursuit fellow, providing guidance around job applications,
-    whiteboard interviews, and resume preparation
-
-##
-
-  ------ ------------------- -- ----------------------
-  Etsy   Software Engineer        Jun 2016 -- Jan 2019
-  ------ ------------------- -- ----------------------
 
 -   Developed holiday search and browse experience using in-house page layout
     engine allowing API-side control of native client experience
@@ -164,12 +146,6 @@
 
 -   [Interviewed entry-level software engineers and engineering
     interns]{.skill-interviews}
-
-##
-
-  ------ ----------------- -- ----------------------
-  Etsy   Release Manager        Jan 2014 -- Jun 2016
-  ------ ----------------- -- ----------------------
 
 -   Transformed engineering culture by pioneering a two-week release schedule
     and a continuous-delivery model of app releases

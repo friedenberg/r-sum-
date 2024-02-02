@@ -7,21 +7,26 @@ OPT_NAME := $(shell cat NAME)
 OPT_PHONE := $(shell cat PHONE)
 OPT_EMAIL := $(shell cat EMAIL)
 OPT_VERSION := $(shell cat VERSION)
-OPT_DATE := $(shell date -u +"%b %Y")
+OPT_GITHUB_URL := $(shell cat GITHUB_URL)
+OPT_DATE := $(shell date -u +"%Y-%m")
 
 STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
 
-CMD_PANDOC := \
-	pandoc -f markdown \
-	--section-div --self-contained \
-	--shift-heading-level-by=1 \
-	-c build/style.css \
-	-V 'version=$(OPT_VERSION)' \
+ARGS_PANDOC := -V 'version=$(OPT_VERSION)' \
 	-V 'email=$(OPT_EMAIL)' \
 	-V 'phone=$(OPT_PHONE)' \
 	-V 'name=$(OPT_NAME)' \
 	-V 'build-date=$(OPT_DATE)' \
+	-V 'github-url=$(OPT_GITHUB_URL)' \
 	--metadata "title=$(OPT_NAME)'s Resume"
+
+CMD_PANDOC := \
+	pandoc -f markdown \
+	--section-div \
+	--embed-resources --standalone \
+	--shift-heading-level-by=1 \
+	-c build/style.css \
+	$(ARGS_PANDOC)
 
 # TODO fix build rule issue with variables above
 
@@ -44,9 +49,6 @@ $(DIR_BUILD):
 build/%: % | $(DIR_BUILD)
 	cp '$<' '$@'
 
-build/style.css: style.scss | $(DIR_BUILD)
-	nix-shell -p sass --run "sass '$<' '$@'"
-
 build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_PANDOC) \
 		$(OPT_PANDOC_TEMPLATE_HTML) \
@@ -55,15 +57,14 @@ build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 build/NAME.txt: Makefile
 	figlet -c -fsmslant '$(OPT_NAME)' > '$@'
 
-build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua $(FILES_DEPS) | $(DIR_BUILD)
+build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain2.lua $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_PANDOC) \
 		--template build/template.txt \
 		--reference-links \
-		-t build/filter-plain.lua \
+		--columns 60 \
+		--lua-filter build/filter-plain2.lua \
+		--to markdown \
 		'$<' -o '$(patsubst %.md,%.txt,$<)'
-
-build/%.weasyprint.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
-	weasyprint '$<' '$@'
 
 build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_CHROME) \
