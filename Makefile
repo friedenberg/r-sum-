@@ -7,9 +7,18 @@ OPT_NAME := $(shell cat NAME)
 OPT_PHONE := $(shell cat PHONE)
 OPT_EMAIL := $(shell cat EMAIL)
 OPT_VERSION := $(shell cat VERSION)
+OPT_GITHUB_URL := $(shell cat GITHUB_URL)
 OPT_DATE := $(shell date -u +"%Y-%m")
 
 STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
+
+ARGS_PANDOC := -V 'version=$(OPT_VERSION)' \
+	-V 'email=$(OPT_EMAIL)' \
+	-V 'phone=$(OPT_PHONE)' \
+	-V 'name=$(OPT_NAME)' \
+	-V 'build-date=$(OPT_DATE)' \
+	-V 'github-url=$(OPT_GITHUB_URL)' \
+	--metadata "title=$(OPT_NAME)'s Resume"
 
 CMD_PANDOC := \
 	pandoc -f markdown \
@@ -17,12 +26,7 @@ CMD_PANDOC := \
 	--embed-resources --standalone \
 	--shift-heading-level-by=1 \
 	-c build/style.css \
-	-V 'version=$(OPT_VERSION)' \
-	-V 'email=$(OPT_EMAIL)' \
-	-V 'phone=$(OPT_PHONE)' \
-	-V 'name=$(OPT_NAME)' \
-	-V 'build-date=$(OPT_DATE)' \
-	--metadata "title=$(OPT_NAME)'s Resume"
+	$(ARGS_PANDOC)
 
 # TODO fix build rule issue with variables above
 

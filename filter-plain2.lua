@@ -3,11 +3,20 @@ local columns = PANDOC_WRITER_OPTIONS.columns
 
 function Pandoc(doc)
   local blocks = pandoc.List()
+  blocks:insert(Banner())
   blocks:insert(HorizontalRule())
+  blocks:insert(RawMarkdownBlock(""))
   blocks:extend(doc.blocks)
   doc.blocks = blocks
   doc.meta.trailer = Trailer()
   return doc
+end
+
+function Banner()
+  -- local text = pandoc.pipe("figlet", {"-f", "threepoint", GetVar("name")}, "")
+  return pandoc.Plain(
+    RawMarkdownInline(GetVar("name") .. "\n" .. GetVar("email"))
+  )
 end
 
 function Header(el)
@@ -20,21 +29,33 @@ function CenterRaw(str)
 end
 
 function Center(str)
-  return pandoc.RawInline("markdown", CenterRaw())
+  return pandoc.RawInline("markdown", CenterRaw(str))
+end
+
+function GetVar(key)
+  return tostring(PANDOC_WRITER_OPTIONS.variables[key])
+end
+
+function RawMarkdownBlock(str)
+  return pandoc.RawBlock("markdown", str)
+end
+
+function RawMarkdownInline(str)
+  return pandoc.RawInline("markdown", str)
 end
 
 function Trailer()
   return pandoc.RawBlock(
-    "markdown",
-    table.concat(
-      {
-        HorizontalRuleRaw(),
-        "",
-        CenterRaw("last updated " .. "$DATE$"),
-        CenterRaw("$VERSION$")
-      },
-      "\n"
-    )
+  "markdown",
+  table.concat(
+  {
+    HorizontalRuleRaw(),
+    "",
+    CenterRaw("last updated " .. GetVar("build-date")),
+    CenterRaw(GetVar("github-url") .. "/releases/tag/v" .. GetVar("version")),
+  },
+  "\n"
+  )
   )
 end
 
@@ -54,21 +75,23 @@ function RawBlock(s)
   return pandoc.List()
 end
 
-function TextWidthOfList(list)
+function TextWidth(x)
   local width = 0
 
-  for i,x in pairs(list) do
-    if x.t == "Str" then
-      width = width + utf8.len(x.text)
-    elseif x.t == "Space" then
-      width = width + 1
-    elseif x.t == "List" then
-      width = width + TextWidthOfList(x)
-    elseif type(x) == "table" then
-      width = width + TextWidthOfList(x)
-    else
-      -- error("unknown type")
+  if x.t == "Str" then
+    width = width + utf8.len(x.text)
+  elseif x.t == "Space" then
+    width = width + 1
+  elseif x.t == "List" then
+    for i, y in pairs(x) do
+      width = width + TextWidth(y)
     end
+  elseif type(x) == "table" then
+    for i, y in pairs(x) do
+      width = width + TextWidth(y)
+    end
+  else
+    error("unknown type: " .. type(x))
   end
 
   return width
@@ -89,8 +112,6 @@ function Table(t)
   local cells = row.cells
   local buffer = pandoc.List()
 
-  local row_width = 0
-
   local each_cell = function(i, cell)
     local contents = cell.contents
 
@@ -98,23 +119,12 @@ function Table(t)
       return
     end
 
-    local content = contents[1]
-
     local local_buffer = pandoc.List()
 
-    local_buffer:extend(content.content)
+    local_buffer:extend(contents[1].content)
 
     if i == 1 then
       local_buffer:insert(pandoc.Str(","))
-      row_width = row_width + 1
-    end
-
-    for i,x in pairs(local_buffer) do
-      if x.t == "Str" then
-        row_width = row_width + utf8.len(x.text)
-      elseif x.t == "Space" then
-        row_width = row_width + 1
-      end
     end
 
     buffer:insert(local_buffer)
@@ -124,15 +134,39 @@ function Table(t)
     each_cell(i, cell)
   end
 
-  local adjusted_row_width = row_width - (#buffer - 1)
+  local row_width = TextWidth(buffer)
+  local output = {}
+
+  if row_width > columns then
+    local new_buffer = {}
+
+    for i, x in pairs(buffer) do
+      if i == 1 then
+        for j, y in pairs(x) do
+          if y.t == "Str" then
+            table.insert(output, y.text)
+          elseif y.t == "Space" then
+            table.insert(output, " ")
+          end
+        end
+
+        table.insert(output, "\n")
+      else
+        table.insert(new_buffer, x)
+      end
+    end
+
+    row_width = TextWidth(new_buffer)
+    buffer = new_buffer
+  end
+
+  local adjusted_row_width = row_width + #buffer
 
   table.insert(
-    buffer,
-    #buffer,
-    {pandoc.Str(string.rep(".", columns - adjusted_row_width))}
+  buffer,
+  #buffer,
+  {pandoc.Str(string.rep(".", columns - adjusted_row_width))}
   )
-
-  local output = {}
 
   for i, x in pairs(buffer) do
     if i > 1 then
