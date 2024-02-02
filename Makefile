@@ -13,7 +13,8 @@ STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
 
 CMD_PANDOC := \
 	pandoc -f markdown \
-	--section-div --self-contained \
+	--section-div \
+	--embed-resources --standalone \
 	--shift-heading-level-by=1 \
 	-c build/style.css \
 	-V 'version=$(OPT_VERSION)' \
@@ -52,11 +53,13 @@ build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 build/NAME.txt: Makefile
 	figlet -c -fsmslant '$(OPT_NAME)' > '$@'
 
-build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua $(FILES_DEPS) | $(DIR_BUILD)
+build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain2.lua $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_PANDOC) \
 		--template build/template.txt \
 		--reference-links \
-		-t build/filter-plain.lua \
+		--columns 60 \
+		--lua-filter build/filter-plain2.lua \
+		--to markdown \
 		'$<' -o '$(patsubst %.md,%.txt,$<)'
 
 build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)

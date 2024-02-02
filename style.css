@@ -86,7 +86,11 @@ section.debug > section {
   border: 1px solid black;
 }
 
-span.skill-interviews {
+span.highlight,span.highlight {
+  font-weight: 600;
+}
+
+span.skill-interviews,span.skill-mentoring {
   font-weight: 600;
 }
 
