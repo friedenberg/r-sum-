@@ -86,10 +86,6 @@ section.debug > section {
   border: 1px solid black;
 }
 
-span.skill-interviews {
-  font-weight: 600;
-}
-
 h1, p {
   margin-block-start: 0pt;
   margin-block-end: 0pt;
