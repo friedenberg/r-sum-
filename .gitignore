@@ -1,7 +1,11 @@
 
-build/
 .DS_Store
+
+.direnv/
+.sass-cache/
+build/
+
 EMAIL
+GITHUB_URL
 NAME
 PHONE
-.sass-cache/

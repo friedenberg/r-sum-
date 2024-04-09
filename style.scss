@@ -1,28 +1,27 @@
+$font-size: 10pt;
+$font-size-position: $font-size + 1pt;
+
+$gap-horizontal: 0ch;
+$gap-vertical: 6pt;
+$gap-list-vertical: 4pt;
+
+$right-width: 66ch;
+$left-width: 20ch;
+$full-width: $left-width + $gap-horizontal + $right-width;
+
+$rule-color: #333;
+$rule-style: solid;
+$rule-width: 0.5pt;
+$rule: $rule-width $rule-style $rule-color;
+
+$debug-border: 1px solid blue;
 
 * {
-  --font-size: 10pt;
-  --font-size-position: calc(var(--font-size) + 1pt);
-
-  --gap-horizontal: 0ch;
-  --gap-vertical: 6pt;
-  --gap-list-vertical: 4pt;
-
-  --right-width: 66ch;
-  --left-width: 20ch;
-  --full-width: calc(var(--left-width) + var(--gap-horizontal) + var(--right-width));
-
-  --rule-color: #333;
-  --rule-style: solid;
-  --rule-width: 0.5pt;
-  --rule: var(--rule-width) var(--rule-style) var(--rule-color);
-
-  --debug-border: 1px solid blue;
-
   margin: 0;
   padding: 0;
   font-family: Georgia;
   /* font-family: "Officina Sans ITC Pro"; */
-  font-size: var(--font-size);
+    font-size: $font-size;
 
   /* counter-reset: pageNumber 1; */
 }
@@ -35,16 +34,20 @@ code {
   font-family: "Andale Mono";
 }
 
+.debug div, .debug table {
+  border: 1px solid red;
+}
+
 header, hr {
   margin-left: auto;
   margin-right: auto;
-  width: var(--full-width);
+  // width: $full-width;
 }
 
 hr {
   border: none;
-  border-top: var(--rule);
-  color: var(--rule-color);
+  border-top: $rule;
+  color: $rule-color;
 }
 
 .omit {
@@ -54,29 +57,45 @@ hr {
 body > * {
   margin-left: auto;
   margin-right: auto;
-  margin-top: var(--gap-vertical);
-  padding-bottom: var(--gap-vertical);
-  width: var(--full-width);
+  margin-top: $gap-vertical;
+  padding-bottom: $gap-vertical;
+  // width: $full-width;
 }
 
 body > :not(:last-child) {
-  border-bottom: var(--rule);
+  border-bottom: $rule;
 }
 
 section.level3 {
-  padding-top: var(--gap-vertical);
-  padding-bottom: var(--gap-vertical);
+  padding-top: $gap-vertical;
+  padding-bottom: $gap-vertical;
   break-inside: avoid;
 }
 
+section.debug > section {
+  border: $debug-border;
+}
+
 .title, header td {
-  font-size: calc(var(--font-size) + 2pt);
+  font-size: $font-size + 2pt;
+  font-weight: 600;
+}
+
+.debug h2 {
+  border: 1px solid black;
+}
+
+span.highlight,span.highlight {
+  font-weight: 600;
+}
+
+span.skill-interviews,span.skill-mentoring {
   font-weight: 600;
 }
 
 h1, p {
-  margin-block-start: 0pt;
-  margin-block-end: 0pt;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
 }
 
 h2 {
@@ -98,10 +117,11 @@ span.todo::before {
 }
 
 table {
-  font-size: calc(var(--font-size-position));
-  margin-bottom: var(--gap-vertical);
+  font-size: $font-size-position;
+  margin-bottom: $gap-vertical;
   border-collapse: collapse;
   table-layout: auto;
+  margin-right: auto;
   width: 100%;
 }
 
@@ -113,7 +133,7 @@ table {
 /*                                         */
 
 .table-leader .level3 td {
-  font-size: var(--font-size-position);
+  font-size: $font-size-position;
   white-space: nowrap;
 }
 
@@ -145,11 +165,38 @@ table {
   ". . . . . . . . . . . . . . . . . . . . "
   ". . . . . . . . . . . . . . . . . . . . "
   ;
-  text-align: justify;
+    text-align: justify;
   overflow: hidden;
-  height: calc(var(--font-size-position) + 1pt);
-  display: block;
-  white-space: break-spaces;
+  height: $font-size-position + 1pt;
+  white-space: nowrap;
+}
+
+ul.leaders {
+  padding: 0;
+  list-style: none
+}
+
+ul.leaders li > span:nth-child(3) {
+  width: auto;
+  border-bottom: 2px red solid;
+  // white-space: break-spaces;
+}
+
+div {
+  border: $debug-border;
+}
+
+ul.leaders {
+  border: $debug-border;
+}
+
+ul.leaders span:first-child {
+  background: white
+}
+
+ul.leaders li > span:nth-child(4) {
+  float: right;
+  background: white
 }
 
 footer {
@@ -166,16 +213,16 @@ footer {
 
 ul {
   /* margin-block-start: 0px; */
-  padding-left: 20pt;
+    padding-left: 20pt;
 }
 
 li {
   break-inside: avoid;
-  margin-block-end: var(--gap-list-vertical);
+  margin-bottom: $gap-list-vertical;
 }
 
 li > ul {
-  margin-block-start: var(--gap-list-vertical);
+  margin-top: $gap-list-vertical;
 }
 
 /* ul that have more than one child */
@@ -183,23 +230,3 @@ section.columns-two.level3 > ul, .columns-two .level3 > ul {
   column-gap: 14pt;
   columns: 2;
 }
-
-/*  ____       _                 */
-/* |  _ \  ___| |__  _   _  __ _ */
-/* | | | |/ _ \ '_ \| | | |/ _` |*/
-/* | |_| |  __/ |_) | |_| | (_| |*/
-/* |____/ \___|_.__/ \__,_|\__, |*/
-/*                         |___/ */
-
-.debug div, .debug table {
-  border: 1px solid red;
-}
-
-.debug h2 {
-  border: 1px solid black;
-}
-
-section.debug > section {
-  border: var(--debug-border);
-}
-
