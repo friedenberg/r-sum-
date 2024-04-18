@@ -47,7 +47,10 @@ $(DIR_BUILD):
 build/%: % | $(DIR_BUILD)
 	cp '$<' '$@'
 
-build/resume.md: resume-no-columns.md | $(DIR_BUILD)
+WHICH_RESUME := resume.md
+# WHICH_RESUME := resume-no-columns.md
+
+build/resume.md: $(WHICH_RESUME) | $(DIR_BUILD)
 	cp '$<' '$@'
 
 # build/style.css: style.scss | $(DIR_BUILD)
