@@ -1,13 +1,25 @@
-# Backend, Infra, and CI Engineer with DevRel experience returning from sabbatical {.tagline .padding-bottom}
-
+# Backend, Infra, and CI Engineer with DevRel experience returning from sabbatical {#backend-infra-and-ci-engineer-with-devrel-experience-returning-from-sabbatical .tagline .padding-bottom}
 
 #  {#section .table-leader .padding-bottom .no-padding-top}
 
 ## 
 
-  ---------------- ------------------ -- --------------------
-  Recurse Center   Engineer, Mentor        2023-08 -- present
-  ---------------- ------------------ -- --------------------
+:::: position-flex
+::: {.position-flex-text .position-flex-company}
+Recurse Center
+:::
+
+::: {.position-flex-text .position-flex-title}
+Engineer, Mentor
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2023-08 -- present
+:::
+::::
 
 Developing a git-like knowledge management system in Go and Rust. Mentoring
 three engineers and [preparing them for behavioral and technical
@@ -17,9 +29,22 @@ for pasteboard manipulation.
 
 ## 
 
-  ------- --------------------------- -- --------------------
-  Asana   Senior Developer Advocate        2022-05 -- 2023-07
-  ------- --------------------------- -- --------------------
+:::: position-flex
+::: {.position-flex-text .position-flex-company}
+Asana
+:::
+
+::: {.position-flex-text .position-flex-title}
+Senior Developer Advocate
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2022-05 -- 2023-07
+:::
+::::
 
 Designed scaleable API release process as API contributions increased by 5×.
 Coordinated and managed all API releases, both internally and externally.
@@ -30,9 +55,22 @@ them for transition to software engineer.
 
 ## 
 
-  -------- -------------------- -- --------------------
-  Google   Developer Advocate        2020-03 -- 2022-05
-  -------- -------------------- -- --------------------
+:::: position-flex
+::: {.position-flex-text .position-flex-company}
+Google
+:::
+
+::: {.position-flex-text .position-flex-title}
+Developer Relations Engineer
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2020-03 -- 2022-05
+:::
+::::
 
 Partnered and consulted with biggest users and developers of the Google Ads API
 and the Google Shopping Content API (e.g., eBay). Contributed samples to the
@@ -45,9 +83,22 @@ engineers]{.skill-interviews}. Produced videos and workshops.
 
 ## 
 
-  ------- ------------------- -- --------------------
-  Zagat   Platform Engineer        2019-04 -- 2019-12
-  ------- ------------------- -- --------------------
+:::: position-flex
+::: {.position-flex-text .position-flex-company}
+Zagat
+:::
+
+::: {.position-flex-text .position-flex-title}
+Platform Engineer
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2019-04 -- 2019-12
+:::
+::::
 
 *(Team was reorged and dissolved in December 2019)*
 
@@ -68,9 +119,18 @@ engineers]{.skill-interviews}. Produced videos and workshops.
 
 ##  {#section-6 .positions-no-title .allow-breaks}
 
-  ------ -- -- --------------------
-  Etsy           2013-10 -- 2019-04
-  ------ -- -- --------------------
+:::: position-flex
+::: {.position-flex-text .position-flex-company}
+Etsy
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2013-10 -- 2019-04
+:::
+::::
 
 -   Senior Software Engineer (2019-01 -- 2019-04)
 
@@ -126,9 +186,22 @@ engineers]{.skill-interviews}. Produced videos and workshops.
 
 ##  {#section-7}
 
-  -------------------------- --------------------------------- -- --------------------
-  NYC Tech Talent Pipeline   Workshop Instructor (part-time)        2020-01 -- 2020-08
-  -------------------------- --------------------------------- -- --------------------
+:::: position-flex
+::: {.position-flex-text .position-flex-company}
+NYC Tech Talent Pipeline
+:::
+
+::: {.position-flex-title .position-flex-leader}
+Workshop Instructor (part-time)
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2020-01 -- 2020-08
+:::
+::::
 
 -   Designed and taught three different data-structures and algorithms focused
     workshops to address skill and knowledge gaps among CUNY and NYC bootcamp
@@ -142,9 +215,22 @@ engineers]{.skill-interviews}. Produced videos and workshops.
 
 ##  {#section-8}
 
-  ------------------------------------------------- ----------- -- --------------------
-  CodeNation, Pursuit, & NYC Tech Talent Pipeline   Volunteer        2018-04 -- 2019-12
-  ------------------------------------------------- ----------- -- --------------------
+:::: position-flex
+::: {.position-flex-text .position-flex-company}
+CodeNation & Pursuit
+:::
+
+::: {.position-flex-title .position-flex-leader}
+Volunteer
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2018-04 -- 2019-12
+:::
+::::
 
 -   Developed curriculum for and taught workshops on using data-structures,
     problem solving, and big-O time and space complexity

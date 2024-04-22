@@ -12,25 +12,25 @@ OPT_DATE := $(shell date -u +"%Y-%m")
 
 STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
 
-CMD_PANDOC := \
-	pandoc -f markdown \
-	--section-div \
-	--embed-resources --standalone \
-	--shift-heading-level-by=1 \
-	-c build/style.css \
-	-V 'version=$(OPT_VERSION)' \
-	-V 'email=$(OPT_EMAIL)' \
-	-V 'phone=$(OPT_PHONE)' \
-	-V 'name=$(OPT_NAME)' \
-	-V 'build-date=$(OPT_DATE)' \
-	-V 'github-url=$(OPT_GITHUB_URL)' \
-	--metadata "title=$(OPT_NAME)'s Resume"
+ARGS_PANDOC := \
+							 --from markdown \
+							 --section-div \
+							 --shift-heading-level-by=1 \
+							 -c build/resume.css \
+							 -V 'version=$(OPT_VERSION)' \
+							 -V 'email=$(OPT_EMAIL)' \
+							 -V 'phone=$(OPT_PHONE)' \
+							 -V 'name=$(OPT_NAME)' \
+							 -V 'build-date=$(OPT_DATE)' \
+							 -V 'github-url=$(OPT_GITHUB_URL)' \
+							 --metadata "title=$(OPT_NAME)'s Resume"
 
 # TODO fix build rule issue with variables above
 
 OPT_PANDOC_TEMPLATE_HTML := --template '$(shell pwd)/build/template.html'
+OPT_PANDOC_TEMPLATE_EMBEDDED_HTML := --template '$(shell pwd)/build/embedded.html'
 
-FILES_DEPS := VERSION build/style.css Makefile build/template.html
+FILES_DEPS := VERSION build/resume.css Makefile build/template.html build/embedded.html
 
 STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
 FILE_OUT_BASE := $(DIR_BUILD)/$(STR_NAME_SNAKE)_resume
@@ -53,19 +53,29 @@ WHICH_RESUME := resume.md
 build/resume.md: $(WHICH_RESUME) | $(DIR_BUILD)
 	cp '$<' '$@'
 
-# build/style.css: style.scss | $(DIR_BUILD)
+# build/resume.css: style.scss | $(DIR_BUILD)
 # 	nix-shell -p sass --run "sass '$<' '$@'"
+#
+build/%.pdf.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
+	pandoc \
+		--embed-resources \
+		--standalone \
+		$(ARGS_PANDOC) \
+		$(OPT_PANDOC_TEMPLATE_HTML) \
+		'$<' -o '$(patsubst %.md,%.pdf.html,$<)'
 
 build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
-	$(CMD_PANDOC) \
-		$(OPT_PANDOC_TEMPLATE_HTML) \
+	pandoc $(ARGS_PANDOC) \
+		$(OPT_PANDOC_TEMPLATE_EMBEDDED_HTML) \
 		'$<' -o '$(patsubst %.md,%.html,$<)'
+	cp build/resume.css $(HOME)/eng/site-linen_is_great/public/
+	cp $@ $(HOME)/eng/site-linen_is_great/public/
 
 build/NAME.txt: Makefile
 	figlet -c -fsmslant '$(OPT_NAME)' > '$@'
 
 build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua $(FILES_DEPS) | $(DIR_BUILD)
-	$(CMD_PANDOC) \
+	pandoc $(ARGS_PANDOC) \
 		--template build/template.txt \
 		--reference-links \
 		--columns 80 \
@@ -75,11 +85,11 @@ build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua
 
 CMD_GREP_CLEAN_CHROME_OUTPUT := grep -v 'AttributionReportingCrossAppWeb'
 
-build/%.pdf: build/%.html $(FILES_DEPS) | $(DIR_BUILD)
+build/%.pdf: build/%.pdf.html $(FILES_DEPS) | $(DIR_BUILD)
 	$(CMD_CHROME) \
 		--headless \
 		--disable-gpu \
-		'--print-to-pdf=$(patsubst %.html,%.pdf,$<)' \
+		'--print-to-pdf=$(patsubst %.pdf.html,%.pdf,$<)' \
 		--no-pdf-header-footer \
 		--print-to-pdf-no-header \
 		'$<' 2>&1 | $(CMD_GREP_CLEAN_CHROME_OUTPUT)

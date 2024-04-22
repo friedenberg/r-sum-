@@ -118,6 +118,87 @@ function TextWidth(x)
   return width
 end
 
+function Div(d)
+  if not d.classes:includes("position-flex") then
+    return d
+  end
+
+  local cells = d.content
+  local buffer = pandoc.List()
+
+  local each_cell = function(i, cell)
+    local contents = cell.content
+
+    if #contents ~= 1 then
+      return
+    end
+
+    local local_buffer = pandoc.List()
+
+    local_buffer:extend(cell.content[1].content)
+
+    if i == 1 then
+      local_buffer:insert(pandoc.Str(","))
+    end
+
+    buffer:insert(local_buffer)
+  end
+
+  for i, cell in pairs(cells) do
+    each_cell(i, cell)
+  end
+
+  local row_width = TextWidth(buffer)
+  local output = {}
+
+  if row_width > columns then
+    local new_buffer = {}
+
+    for i, x in pairs(buffer) do
+      if i == 1 then
+        for j, y in pairs(x) do
+          if y.t == "Str" then
+            table.insert(output, y.text)
+          elseif y.t == "Space" then
+            table.insert(output, " ")
+          end
+        end
+
+        table.insert(output, "\n")
+      else
+        table.insert(new_buffer, x)
+      end
+    end
+
+    row_width = TextWidth(new_buffer)
+    buffer = new_buffer
+  end
+
+  local adjusted_row_width = row_width + #buffer
+
+  table.insert(
+  buffer,
+  #buffer,
+  {pandoc.Str(string.rep(".", columns - adjusted_row_width))}
+  )
+
+  for i, x in pairs(buffer) do
+    if i > 1 then
+      table.insert(output, " ")
+    end
+
+    for j, y in pairs(x) do
+      if y.t == "Space" then
+        table.insert(output, " ")
+      else
+        table.insert(output, y.text)
+      end
+    end
+  end
+
+  return pandoc.RawBlock("markdown", table.concat(output, ""))
+end
+
 function Table(t)
   if #t.bodies > 1 then
     return t

@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="generator" content="pandoc" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-    <style>
-$styles.html()$
-    </style>
     $for(css)$
     <link rel="stylesheet" href="$css$" />
     $endfor$
@@ -19,47 +17,6 @@ $styles.html()$
     $endfor$
   </head>
   <body>
-
-    <header id=header>
-      <section class="padding-bottom">
-        <table>
-          <tbody>
-            <tr>
-              <td style="text-align: left;">$name$</td>
-              <td></td>
-              <td style="text-align: right;"><a href="mailto:$email$"
-                  class="email">$email$</a></td>
-              <td class="page-count" style="text-align: right;"></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </header>
-
-    <!-- <header id="title-block-header"> -->
-    <!--   <span class="title">$name$</span> -->
-    <!--   <span class="email"><a href="mailto:$email$">$email$</a></span> -->
-    <!--   <hr> -->
-    <!-- </header> -->
-
-    $body$
-
-    <footer id=footer>
-      <div class="date build-date">last updated $build-date$</div>
-      <div class="as-format">
-        <a href="https://github.com/friedenberg/r-sum-/releases/download/v$version$/sasha_friedenberg_resume.html">html</a>
-           |
-        <a
-          href="https://github.com/friedenberg/r-sum-/releases/download/v$version$/sasha_friedenberg_resume.pdf">pdf</a>
-           |
-        <a href="https://github.com/friedenberg/r-sum-/releases/download/v$version$/sasha_friedenberg_resume.txt">txt</a>
-      </div>
-      <div class="version">
-        <a href="https://github.com/friedenberg/r-sum-/releases/tag/v$version$">
-          v$version$
-        </a>
-      </div>
-    </footer>
-
+    ${ embedded() }
   </body>
 </html>

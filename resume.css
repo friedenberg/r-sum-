@@ -1,5 +1,5 @@
 
-* {
+.resume {
   --font-size: 10pt;
   --font-size-position: calc(var(--font-size) + 1pt);
 
@@ -7,9 +7,9 @@
   --gap-vertical: 6pt;
   --gap-list-vertical: 4pt;
 
-  --right-width: 66ch;
-  --left-width: 20ch;
-  --full-width: calc(var(--left-width) + var(--gap-horizontal) + var(--right-width));
+  /* --right-width: 66ch; */
+  /* --left-width: 20ch; */
+  /* --full-width: calc(var(--left-width) + var(--gap-horizontal) + var(--right-width)); */
 
   --rule-color: #333;
   --rule-style: solid;
@@ -18,7 +18,6 @@
 
   --debug-border: 1px solid blue;
 
-  margin: 0;
   padding: 0;
   font-family: Georgia;
   /* font-family: "Officina Sans ITC Pro"; */
@@ -27,69 +26,93 @@
   /* counter-reset: pageNumber 1; */
 }
 
-body {
+div.resume {
+  display: flex;
+  justify-content: center;
   margin: auto;
+  max-width: calc(86ch + var(--gap-horizontal));
 }
 
-code {
+div.resume header .header-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.resume header .header-flex > div.header-flex-text {
+  font-size: calc(var(--font-size) + 2pt);
+  white-space: nowrap;
+  flex: 0 0;
+}
+
+div.resume header .header-flex > div.header-flex-text:first-child {
+  font-weight: bold;
+}
+
+div.resume header .header-flex > div.header-flex-space {
+  flex: 1 1;
+}
+
+div.resume > div {
+  overflow: auto;
+  max-width: calc(86ch + var(--gap-horizontal));
+}
+
+.resume code {
   font-family: "Andale Mono";
 }
 
-header, hr {
-  margin-left: auto;
-  margin-right: auto;
-  width: var(--full-width);
-}
+/* .resume header, .resume hr { */
+/*   margin-left: auto; */
+/*   margin-right: auto; */
+/*   width: var(--full-width); */
+/* } */
 
-hr {
+.resume hr {
   border: none;
   border-top: var(--rule);
   color: var(--rule-color);
 }
 
-.omit {
+.resume .omit {
   visibility: collapse;
 }
 
-section, footer {
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: var(--gap-vertical);
+.resume section, .resume footer {
+  /* padding-bottom: var(--gap-vertical); */
   padding-top: var(--gap-vertical);
-  width: var(--full-width);
 }
 
-section.no-padding-top {
+.resume section.no-padding-top {
   padding-top: 0;
 }
 
-body > :not(:last-child) {
+.resume body > :not(:last-child) {
   border-bottom: var(--rule);
 }
 
-section.level3 {
+.resume section.level3 {
   padding-top: var(--gap-vertical);
   padding-bottom: var(--gap-vertical);
 }
 
-.title, header td {
+.resume .title, .resume header td {
   font-size: calc(var(--font-size) + 2pt);
   font-weight: 600;
 }
 
-h1, p {
+.resume h1, .resume p {
   margin-block-start: 0pt;
   margin-block-end: 0pt;
 }
 
-h2 {
+.resume h2 {
   text-transform: uppercase;
   font-size: inherit;
   margin-block-start: var(--gap-vertical);
   margin-block-end: var(--gap-vertical);
 }
 
-h2.tagline {
+.resume h2.tagline {
   text-transform: none;
   font-size: inherit;
   font-weight: normal;
@@ -98,25 +121,26 @@ h2.tagline {
   margin-block-end: 0;
 }
 
-span.todo {
+.resume h3 {
+  display: none;
+}
+
+.resume span.todo {
   padding: 3px;
   color: red;
   border: 1px solid red;
   border-radius: 3px;
 }
 
-span.todo::before {
+.resume span.todo::before {
   content:
   "todo!"
   ;
 }
 
-table {
+.resume div.position-flex {
   font-size: calc(var(--font-size-position));
   margin-bottom: var(--gap-vertical);
-  border-collapse: collapse;
-  table-layout: auto;
-  width: 100%;
 }
 
 /*  ____           _ _   _                 */
@@ -126,32 +150,47 @@ table {
 /* |_|   \___/|___/_|\__|_|\___/|_| |_|___/*/
 /*                                         */
 
-.table-leader .level3 td {
+div.resume div.position-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.resume div.position-flex > div {
+  /* margin: 2pt; */
+}
+
+div.resume div.position-flex > div.position-flex-text {
+  white-space: nowrap;
+  flex: 0 0;
+}
+
+div.resume div.position-flex > div.position-flex-space {
+  flex: 1 1;
+}
+
+div.resume div.position-flex > div {
   font-size: var(--font-size-position);
   white-space: nowrap;
 }
 
-.table-leader .level3 td:not(:first-child) {
+div.resume div.position-flex > div:not(:first-child) {
   padding-left: 2pt;
 }
 
-.table-leader .level3 td:not(:last-child) {
+div.resume div.position-flex > div:not(:last-child) {
   padding-right: 2pt;
 }
 
-.table-leader .level3 td:nth-of-type(1) {
+div.resume div.position-flex > div.position-flex-text.position-flex-company {
   font-weight: bold;
 }
 
-.table-leader .level3:not(.positions-no-title) td:nth-of-type(1)::after {
-  content: ",";
-}
-
-.table-leader .level3 td:nth-of-type(1)::after {
+div.resume div.position-flex > div.position-flex-text.position-flex-company:has(+ .position-flex-title)::after {
   font-weight: normal;
+  /* content: ","; */
 }
 
-.table-leader .level3 td:nth-last-child(2)::before {
+.resume div.position-flex > div.position-flex-space::before {
   content:
   ". . . . . . . . . . . . . . . . . . . . "
   ". . . . . . . . . . . . . . . . . . . . "
@@ -166,7 +205,7 @@ table {
   white-space: break-spaces;
 }
 
-footer {
+.resume footer {
   font-size: x-small;
   text-align: center;
 }
@@ -178,21 +217,21 @@ footer {
 /* |_____|_|___/\__|___/*/
 /*                      */
 
-ul {
-  /* margin-block-start: 0px; */
+.resume ul {
+  margin-block-start: var(--gap-vertical);
   padding-left: 20pt;
 }
 
-li {
+.resume li {
   margin-block-end: var(--gap-list-vertical);
 }
 
-li > ul {
+.resume li > ul {
   margin-block-start: var(--gap-list-vertical);
 }
 
 /* ul that have more than one child */
-section.columns-two.level3 > ul, .columns-two .level3 > ul {
+.resume section.columns-two.level3 > ul, .resume .columns-two .level3 > ul {
   column-gap: 14pt;
   columns: 2;
 }
@@ -204,11 +243,11 @@ section.columns-two.level3 > ul, .columns-two .level3 > ul {
 /* |_|   \__,_|\__, |\___| |____/|_|  \___|\__,_|_|\_\___/*/
 /*             |___/                                      */
 
-section.level3:not(.allow-breaks) {
+.resume section.level3:not(.allow-breaks) {
   break-inside: avoid;
 }
 
-li:not(.allow-breaks) {
+.resume li:not(.allow-breaks) {
   break-inside: avoid;
 }
 
@@ -219,7 +258,7 @@ li:not(.allow-breaks) {
 /* |____/|_|\_\_|_|_|___/*/
 /*                       */
 
-.skill-product {
+.resume .skill-product {
   display: none;
 }
 
