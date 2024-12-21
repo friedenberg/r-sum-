@@ -1,10 +1,40 @@
-# Backend, Infra, and CI Engineer with DevRel experience returning from sabbatical {#backend-infra-and-ci-engineer-with-devrel-experience-returning-from-sabbatical .tagline .padding-bottom}
+# Backend, Infra, and CI Engineer with Devex and DevRel focus {#backend-infra-and-ci-engineer-with-devex-and-devrel-focus .tagline .padding-bottom}
 
 #  {#section .table-leader .padding-bottom .no-padding-top}
 
 ## 
 
-:::: position-flex
+::: position-flex
+::: {.position-flex-text .position-flex-company}
+Datadog
+:::
+
+::: {.position-flex-text .position-flex-title}
+Software Engineer
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2024-07 -- 2024-12
+:::
+:::
+
+*(Laid off in 2024-12)*
+
+-   Designed and built a CI system using Temporal and Bazel for running 50K
+    tests in polyglot mega repo which reduced pressure and cost on existing CI
+    (which was resource-constrained, expensive, and experiencing frequent
+    outages).
+-   Designed an auditing and provenance system for builds and tests that would
+    also improve build times and test reliability by logging all egress from
+    build and test containers and redirecting dependency fetching traffic to
+    internal cache. Cost savings were estimated to be \$200K per month to start.
+
+## 
+
+::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Recurse Center
 :::
@@ -17,9 +47,9 @@ Engineer, Mentor
 :::
 
 ::: {.position-flex-text .position-flex-date}
-2023-08 -- present
+2023-08 -- 2024-07
 :::
-::::
+:::
 
 Developing a git-like knowledge management system in Go and Rust. Mentoring
 three engineers and [preparing them for behavioral and technical
@@ -29,7 +59,7 @@ for pasteboard manipulation.
 
 ## 
 
-:::: position-flex
+::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Asana
 :::
@@ -44,7 +74,7 @@ Senior Developer Advocate
 ::: {.position-flex-text .position-flex-date}
 2022-05 -- 2023-07
 :::
-::::
+:::
 
 Designed scaleable API release process as API contributions increased by 5×.
 Coordinated and managed all API releases, both internally and externally.
@@ -55,7 +85,7 @@ them for transition to software engineer.
 
 ## 
 
-:::: position-flex
+::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Google
 :::
@@ -70,7 +100,7 @@ Developer Relations Engineer
 ::: {.position-flex-text .position-flex-date}
 2020-03 -- 2022-05
 :::
-::::
+:::
 
 Partnered and consulted with biggest users and developers of the Google Ads API
 and the Google Shopping Content API (e.g., eBay). Contributed samples to the
@@ -83,7 +113,7 @@ engineers]{.skill-interviews}. Produced videos and workshops.
 
 ## 
 
-:::: position-flex
+::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Zagat
 :::
@@ -98,9 +128,9 @@ Platform Engineer
 ::: {.position-flex-text .position-flex-date}
 2019-04 -- 2019-12
 :::
-::::
+:::
 
-*(Team was reorged and dissolved in December 2019)*
+*(Team was dissolved in December 2019)*
 
 -   Created roadmaps, prioritized work, and designed architecture for legacy
     Zagat, new user-generated content app, and editorialized restaurant finder.
@@ -119,7 +149,7 @@ Platform Engineer
 
 ##  {#section-6 .positions-no-title .allow-breaks}
 
-:::: position-flex
+::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Etsy
 :::
@@ -130,7 +160,7 @@ Etsy
 ::: {.position-flex-text .position-flex-date}
 2013-10 -- 2019-04
 :::
-::::
+:::
 
 -   Senior Software Engineer (2019-01 -- 2019-04)
 
@@ -172,21 +202,17 @@ Etsy
 -   Release Manager (2014-01 -- 2016-06)
 
     -   Transformed engineering culture by pioneering a two-week release
-        schedule and a continuous-delivery model of app releases
-    -   Responsible for the stable releases of all Etsy mobile apps (Android
-        Buyer, Android Seller, iOS Buyer, & iOS Seller)
-    -   Mitigated product-launch conflicts
-    -   Created and documented efficient and effective failure-paths for
-        releases
+        schedule and a continuous-delivery model of app releases while being
+        responsible for the stable releases of all four Etsy mobile apps
     -   Designed and built a UI to allow iOS engineers to selectively enable /
         disable features in the iOS app to improve ease of testing
     -   [Interviewed engineering managers]{.skill-interviews}
 
-# Mentoring & Volunteering {#section-5 .table-leader .padding-bottom}
+# Mentoring & Volunteering {#mentoring-volunteering .table-leader .padding-bottom}
 
-##  {#section-7}
+## 
 
-:::: position-flex
+::: position-flex
 ::: {.position-flex-text .position-flex-company}
 NYC Tech Talent Pipeline
 :::
@@ -201,7 +227,7 @@ Workshop Instructor (part-time)
 ::: {.position-flex-text .position-flex-date}
 2020-01 -- 2020-08
 :::
-::::
+:::
 
 -   Designed and taught three different data-structures and algorithms focused
     workshops to address skill and knowledge gaps among CUNY and NYC bootcamp
@@ -213,9 +239,9 @@ Workshop Instructor (part-time)
 -   [Performed technical and behavioral interviews]{.skill-interview} for
     admission into talent pipeline
 
-##  {#section-8}
+## 
 
-:::: position-flex
+::: position-flex
 ::: {.position-flex-text .position-flex-company}
 CodeNation & Pursuit
 :::
@@ -230,7 +256,7 @@ Volunteer
 ::: {.position-flex-text .position-flex-date}
 2018-04 -- 2019-12
 :::
-::::
+:::
 
 -   Developed curriculum for and taught workshops on using data-structures,
     problem solving, and big-O time and space complexity

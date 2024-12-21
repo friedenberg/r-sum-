@@ -1,8 +1,6 @@
 
 DIR_BUILD := build
 
-CMD_CHROME := /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
-
 OPT_NAME := $(shell cat NAME)
 OPT_PHONE := $(shell cat PHONE)
 OPT_EMAIL := $(shell cat EMAIL)
@@ -86,13 +84,7 @@ build/%.txt: build/%.md build/NAME.txt build/template.txt build/filter-plain.lua
 CMD_GREP_CLEAN_CHROME_OUTPUT := grep -v 'AttributionReportingCrossAppWeb'
 
 build/%.pdf: build/%.pdf.html $(FILES_DEPS) | $(DIR_BUILD)
-	$(CMD_CHROME) \
-		--headless \
-		--disable-gpu \
-		'--print-to-pdf=$(patsubst %.pdf.html,%.pdf,$<)' \
-		--no-pdf-header-footer \
-		--print-to-pdf-no-header \
-		'$<' 2>&1 | $(CMD_GREP_CLEAN_CHROME_OUTPUT)
+	nix run github:friedenberg/chromium-html-to-pdf "$<" > "$@"
 
 .PHONY: clean
 clean:

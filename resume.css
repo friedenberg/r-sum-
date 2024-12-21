@@ -27,6 +27,7 @@
 }
 
 div.resume {
+  user-select: text;
   display: flex;
   justify-content: center;
   margin: auto;
