@@ -89,8 +89,3 @@ build/%.pdf: build/%.pdf.html $(FILES_DEPS) | $(DIR_BUILD)
 .PHONY: clean
 clean:
 	-rm -rf '$(DIR_BUILD)'
-
-.PHONY: install
-install:
-	brew bundle install
-
