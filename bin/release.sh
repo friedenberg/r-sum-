@@ -12,7 +12,7 @@ version="v$(cat ./VERSION)"
 
 make
 
-str_snake_cas="$(tr "[:upper:]" "[:lower:]" <NAME | tr " " "_")"
+str_snake_case="$(tr "[:upper:]" "[:lower:]" <NAME | tr " " "_")"
 file_out_base="build/${str_snake_case}_resume"
 
 git diff --exit-code -s || (echo "unstaged changes, refusing to release" && exit 1)
