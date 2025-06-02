@@ -1,7 +1,6 @@
 #! /bin/bash -xe
 
 # TODO migrate to site-linenisgreat and add support for historical objects
-exit 1
 
 ${EDITOR:-${VISUAL:-vi}} ./VERSION
 git add ./VERSION
