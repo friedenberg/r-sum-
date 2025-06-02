@@ -1,4 +1,6 @@
 
+# TODO migrate to justfile
+
 DIR_BUILD := build
 
 OPT_NAME := $(shell cat NAME)
@@ -15,9 +17,6 @@ JUSTFILE_VARIABLES := \
 		"phone=$(OPT_PHONE)" \
 		"github_url=$(OPT_GITHUB_URL)" \
 		"version=$(OPT_VERSION)"
-
-OPT_PANDOC_TEMPLATE_HTML := --template '$(shell pwd)/build/template.html'
-OPT_PANDOC_TEMPLATE_EMBEDDED_HTML := --template '$(shell pwd)/build/embedded.html'
 
 FILES_DEPS := VERSION Makefile
 
@@ -45,21 +44,25 @@ build/resume.md: $(WHICH_RESUME) | $(DIR_BUILD)
 # 	nix-shell -p sass --run "sass '$<' '$@'"
 #
 build/%.pdf.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
-	markdown-to-resume $(JUSTFILE_VARIABLES) html-standalone "$<"
+	resume-builder $(JUSTFILE_VARIABLES) html-standalone "$<"
 	mv "$<.html" "$@"
 
 build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
-	markdown-to-resume $(JUSTFILE_VARIABLES) html-embedded "$<"
+	resume-builder $(JUSTFILE_VARIABLES) html-embedded "$<"
 	mv "$<.html" "$@"
 	# cp build/resume.css $(HOME)/eng/site-linen_is_great/public/
-	cp $@ $(HOME)/eng/site-linen_is_great/public/
+	cp $@ $(HOME)/eng2/site-linenisgreat/public/resume.html
 
 build/NAME.txt: Makefile
 	figlet -c -fsmslant '$(OPT_NAME)' > '$@'
 
 build/%.txt: build/%.md build/NAME.txt $(FILES_DEPS) | $(DIR_BUILD)
-	markdown-to-resume $(JUSTFILE_VARIABLES) txt "$<"
+	resume-builder $(JUSTFILE_VARIABLES) txt "$<"
 	mv "$<.txt" "$@"
+
+build/%.docx: build/%.md build/NAME.txt $(FILES_DEPS) | $(DIR_BUILD)
+	resume-builder $(JUSTFILE_VARIABLES) docx "$<"
+	mv "$<.docx" "$@"
 
 build/%.pdf: build/%.pdf.html $(FILES_DEPS) | $(DIR_BUILD)
 	html-to-pdf "$<" > "$@"
