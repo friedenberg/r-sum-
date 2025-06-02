@@ -9,3 +9,7 @@ EMAIL
 GITHUB_URL
 NAME
 PHONE
+.gitsecret/keys/random_seed
+!*.secret
+.env
+secrets.env

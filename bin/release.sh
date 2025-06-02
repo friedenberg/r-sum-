@@ -20,7 +20,8 @@ git diff --exit-code -s || (echo "unstaged changes, refusing to release" && exit
 function run_with_gh_token() {
   set +x
   echo "+ $*"
-  GITHUB_TOKEN="$(gpg --quiet --decrypt ~/.config/hub.secret)" "$@"
+  eval "$(direnv dotenv bash secrets.env)"
+  "$@"
 }
 
 run_with_gh_token hub release create \
