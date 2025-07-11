@@ -4,7 +4,26 @@
 
 ## 
 
-::: position-flex
+::::::: position-flex
+::: {.position-flex-text .position-flex-company}
+Career Break
+:::
+
+::: {.position-flex-text .position-flex-title}
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2025-01 -- 2025-06
+:::
+:::::::
+
+-   Completed comprehensive home renovations, requiring project management,
+    budgeting, vendor coordination, and design work.
+
+::::::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Datadog
 :::
@@ -19,11 +38,11 @@ Software Engineer
 ::: {.position-flex-text .position-flex-date}
 2024-07 -- 2024-12
 :::
-:::
+:::::::
 
 *(Laid off in 2024-12)*
 
--   Designed and built a CI system using Temporal and Bazel for running 50K
+-   Designed and built CI system using Temporal, Bazel, and Go for running 50K
     tests in polyglot mega repo which reduced pressure and cost on existing CI
     (which was resource-constrained, expensive, and experiencing frequent
     outages).
@@ -34,7 +53,7 @@ Software Engineer
 
 ## 
 
-::: position-flex
+::::::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Recurse Center
 :::
@@ -49,17 +68,33 @@ Engineer, Mentor
 ::: {.position-flex-text .position-flex-date}
 2023-08 -- 2024-07
 :::
-:::
+:::::::
 
-Developing a git-like knowledge management system in Go and Rust. Mentoring
-three engineers and [preparing them for behavioral and technical
-interviews]{.skill-interviews}. Paired with junior and senior engineers on
-various projects: shaders in godot, word-game in React, macOS bridge in Python
-for pasteboard manipulation.
+Built [Dodder](https://github.com/friedenberg/dodder), a Git-like version
+control system for Zettelkasten knowledge management in Go, featuring:
+
+-   Content-addressable storage with append-only object graph allowing multiple
+    versions to coexist and satisfy concurrent build graphs
+-   Cryptographic signing and verification of objects across distributed
+    repositories with ZSTD compression and Age encryption
+-   Sophisticated query engine supporting tags, full-text search, and Lua
+    scripting integration
+-   Highly-modular architecture with pool-based memory management and custom
+    binary index format for optimized IO
+-   HTTP/Unix socket API server with mTLS, remote synchronization, and
+    cross-repository operations
+-   Git-style CLI (clone/push/pull/diff) with shell completion and comprehensive
+    BATS/unit testing
+
+`<!-- Developing a git-like knowledge management system in Go and Rust. Mentoring -->`{=html}
+`<!-- three engineers and [preparing them for behavioral and technical -->`{=html}
+`<!-- interviews]{.skill-interviews}. Paired with junior and senior engineers on -->`{=html}
+`<!-- various projects: shaders in godot, word-game in React, macOS bridge in Python -->`{=html}
+`<!-- for pasteboard manipulation. -->`{=html}
 
 ## 
 
-::: position-flex
+::::::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Asana
 :::
@@ -74,7 +109,7 @@ Senior Developer Advocate
 ::: {.position-flex-text .position-flex-date}
 2022-05 -- 2023-07
 :::
-:::
+:::::::
 
 Designed scaleable API release process as API contributions increased by 5×.
 Coordinated and managed all API releases, both internally and externally.
@@ -85,7 +120,7 @@ them for transition to software engineer.
 
 ## 
 
-::: position-flex
+::::::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Google
 :::
@@ -100,7 +135,7 @@ Developer Relations Engineer
 ::: {.position-flex-text .position-flex-date}
 2020-03 -- 2022-05
 :::
-:::
+:::::::
 
 Partnered and consulted with biggest users and developers of the Google Ads API
 and the Google Shopping Content API (e.g., eBay). Contributed samples to the
@@ -113,7 +148,7 @@ engineers]{.skill-interviews}. Produced videos and workshops.
 
 ## 
 
-::: position-flex
+::::::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Zagat
 :::
@@ -128,7 +163,7 @@ Platform Engineer
 ::: {.position-flex-text .position-flex-date}
 2019-04 -- 2019-12
 :::
-:::
+:::::::
 
 *(Team was dissolved in December 2019)*
 
@@ -145,11 +180,10 @@ Platform Engineer
     launch of new UGC product]{.skill-product}
 -   Developed staging and local development environment for a mixed codebase
     (legacy and new product)
--   [Interviewed product managers and engineering managers]{.skill-interviews}
 
 ##  {#section-6 .positions-no-title .allow-breaks}
 
-::: position-flex
+:::::: position-flex
 ::: {.position-flex-text .position-flex-company}
 Etsy
 :::
@@ -160,7 +194,7 @@ Etsy
 ::: {.position-flex-text .position-flex-date}
 2013-10 -- 2019-04
 :::
-:::
+::::::
 
 -   Senior Software Engineer (2019-01 -- 2019-04)
 
@@ -196,23 +230,17 @@ Etsy
     -   Created and maintained internal Python package for managing deployments
         of Android apps to Google Play using Google Play API
 
-    -   [Interviewed entry-level software engineers and engineering
+    -   [Interviewed engineering manager, entry-level software engineers, and
         interns]{.skill-interviews}
 
--   Release Manager (2014-01 -- 2016-06)
-
-    -   Transformed engineering culture by pioneering a two-week release
-        schedule and a continuous-delivery model of app releases while being
-        responsible for the stable releases of all four Etsy mobile apps
     -   Designed and built a UI to allow iOS engineers to selectively enable /
         disable features in the iOS app to improve ease of testing
-    -   [Interviewed engineering managers]{.skill-interviews}
 
 # Mentoring & Volunteering {#mentoring-volunteering .table-leader .padding-bottom}
 
 ## 
 
-::: position-flex
+::::::: position-flex
 ::: {.position-flex-text .position-flex-company}
 NYC Tech Talent Pipeline
 :::
@@ -227,7 +255,7 @@ Workshop Instructor (part-time)
 ::: {.position-flex-text .position-flex-date}
 2020-01 -- 2020-08
 :::
-:::
+:::::::
 
 -   Designed and taught three different data-structures and algorithms focused
     workshops to address skill and knowledge gaps among CUNY and NYC bootcamp
@@ -241,7 +269,7 @@ Workshop Instructor (part-time)
 
 ## 
 
-::: position-flex
+::::::: position-flex
 ::: {.position-flex-text .position-flex-company}
 CodeNation & Pursuit
 :::
@@ -256,7 +284,7 @@ Volunteer
 ::: {.position-flex-text .position-flex-date}
 2018-04 -- 2019-12
 :::
-:::
+:::::::
 
 -   Developed curriculum for and taught workshops on using data-structures,
     problem solving, and big-O time and space complexity
