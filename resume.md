@@ -1,8 +1,34 @@
-# Backend, Infra, and CI Engineer with Devex and DevRel focus {#backend-infra-and-ci-engineer-with-devex-and-devrel-focus .tagline .padding-bottom}
+<!-- # Backend, Infra, and CI Engineer with Devex and DevRel focus
+{#backend-infra-and-ci-engineer-with-devex-and-devrel-focus .tagline
+.padding-bottom} -->
 
 #  {#section .table-leader .padding-bottom .no-padding-top}
 
 ## 
+
+::::::: position-flex
+::: {.position-flex-text .position-flex-company}
+Etsy
+:::
+
+::: {.position-flex-text .position-flex-title}
+Senior Software Engineer, Contractor
+:::
+
+::: {.position-flex-space .position-flex-leader}
+:::
+
+::: {.position-flex-text .position-flex-date}
+2025-10 -- present
+:::
+:::::::
+
+-   Identified and corrected experimentation issue in persistent experiment
+*   Exploring experimentation boundaries responsible for bucketing errors in all
+*   experiments
+-   Designing and roadmapping new feature flag configuration system
+
+##
 
 ::::::: position-flex
 ::: {.position-flex-text .position-flex-company}
@@ -16,7 +42,7 @@ Career Break
 :::
 
 ::: {.position-flex-text .position-flex-date}
-2025-01 -- 2025-06
+2025-01 -- 2025-10
 :::
 :::::::
 
