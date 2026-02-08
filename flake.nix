@@ -1,17 +1,17 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/d981d41ffe5b541eae3782029b93e2af5d229cc2";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/09eb77e94fa25202af8f3e81ddc7353d9970ac1b";
+    nixpkgs.url = "github:NixOS/nixpkgs/23d72dabcb3b12469f57b37170fcbc1789bd7457";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/b28c4999ed71543e71552ccfd0d7e68c581ba7e9";
     utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.102";
 
     devenv-pandoc.url = "github:friedenberg/eng?dir=pkgs/alfa/devenv-pandoc";
-    resume-builder.url = "github:friedenberg/eng?dir=pkgs/bravo/resume-builder";
+    resume-builder.url = "github:friedenberg/resume-builder";
   };
 
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-stable
+    , nixpkgs-master
     , utils
     , devenv-pandoc
     , resume-builder
