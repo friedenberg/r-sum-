@@ -43,13 +43,17 @@ WHICH_RESUME := resume.md
 build/resume.md: $(WHICH_RESUME) | $(DIR_BUILD)
 	cp '$<' '$@'
 
-build/%.pdf.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
-	resume-builder $(JUSTFILE_VARIABLES) html-standalone "$<"
+# resume-builder emits <stem>.html beside its input; rename to the target.
+define resume_builder_html
+	resume-builder $(JUSTFILE_VARIABLES) $(1) "$<"
 	mv "$<.html" "$@"
+endef
+
+build/%.pdf.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
+	$(call resume_builder_html,html-standalone)
 
 build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
-	resume-builder $(JUSTFILE_VARIABLES) html-embedded "$<"
-	mv "$<.html" "$@"
+	$(call resume_builder_html,html-embedded)
 	@test -d $(HOME)/eng2/site-linenisgreat/public \
 	    && cp $@ $(HOME)/eng2/site-linenisgreat/public/resume.html \
 	    || true
