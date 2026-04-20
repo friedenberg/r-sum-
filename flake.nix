@@ -31,6 +31,7 @@
             resume-builder.packages.${system}.resume-builder
             chrest.packages.${system}.default
             pkgs.figlet
+            pkgs.just
           ];
         };
       }

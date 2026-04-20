@@ -18,6 +18,11 @@ The Makefile reads metadata from single-line files: `NAME`, `EMAIL`, `PHONE`, `G
 
 There is a TODO in the `Makefile` header to migrate the build to a justfile; preserve the Makefile unless explicitly asked to migrate.
 
+A thin `justfile` lives alongside the Makefile (see issue #3 for the broader migration question — not done yet). Recipes:
+
+- `just build` — invokes `make`.
+- `just test` — smoke test. Stubs any missing metadata files (so the recipe also works from a clean checkout / CI), runs `make clean && make`, and asserts `build/<name>_resume.{html,txt,pdf}` all exist non-empty and the PDF has valid magic. Writes the build output to stdout/stderr as-is.
+
 ## Release
 
 ```sh
@@ -35,7 +40,7 @@ Uses the `hub` CLI with a GitHub token loaded via `direnv dotenv bash secrets.en
 ## Environment
 
 - **Nix flake** with `direnv` (`source_up` + `use flake`) provides the dev shell.
-- Flake inputs that contribute tooling: `resume-builder` (brings Pandoc transitively), `chrest` (brings its own headless Firefox in-closure), and `nixpkgs.figlet`. (`devenv-pandoc` was removed — do not re-add it.)
+- Flake inputs that contribute tooling: `resume-builder` (brings Pandoc transitively), `chrest` (brings its own headless Firefox in-closure), plus `nixpkgs.figlet` and `nixpkgs.just`. (`devenv-pandoc` was removed — do not re-add it.)
 - PDF generation defaults to `chrest capture --format pdf --browser firefox` (headless Firefox). Override with `make PDF_RENDERER=html-to-pdf` to use the legacy renderer — but note `html-to-pdf` is not currently provided by this flake and must be on PATH separately.
 
 ## Architecture
@@ -64,5 +69,6 @@ Secrets are managed with [`git-secret`](https://git-secret.io):
 - `secrets.env` is the decrypted plaintext; it is **gitignored** and should never be committed. `bin/release.sh` sources it via `direnv dotenv bash secrets.env` at release time.
 - `.gitsecret/keys/random_seed` is also gitignored.
 - `PHONE` contains a phone number — do not expose it in output, logs, or commits.
+- `just test` (and `make` in general) prints `PHONE`, `EMAIL`, and other metadata as part of resume-builder's command-line echo, and the rendered `build/*_resume.{html,txt,pdf}` outputs also contain them. Both the metadata inputs (`NAME`/`EMAIL`/`PHONE`/`GITHUB_URL`) and `build/` are gitignored, CI doesn't run `just test`, and no log file is written — so the PII only lives in local terminal scrollback and in the gitignored build outputs. Still, **don't pipe test output to a file you'll share**, and don't paste the scrollback into issues/PRs.
 
 There is a TODO in `bin/release.sh` to migrate the release flow to `site-linenisgreat` and add support for historical objects; preserve the current script unless explicitly asked to migrate.
