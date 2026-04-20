@@ -5,11 +5,17 @@ build:
 test:
     #!/usr/bin/env bash
     set -euo pipefail
-    [ -s NAME ]       || echo 'Test User'           > NAME
-    [ -s EMAIL ]      || echo 'test@example.com'    > EMAIL
-    [ -s PHONE ]      || echo '000-000-0000'        > PHONE
-    [ -s GITHUB_URL ] || echo 'https://example.com' > GITHUB_URL
-    name_snake=$(tr '[:upper:] ' '[:lower:]_' < NAME)
+    if [ ! -s .env ]; then
+        cat > .env <<'EOF'
+    NAME="Test User"
+    EMAIL="test@example.com"
+    PHONE="000-000-0000"
+    GITHUB_URL="https://example.com"
+    EOF
+    fi
+    # shellcheck disable=SC1091
+    . ./.env
+    name_snake=$(echo "$NAME" | tr '[:upper:] ' '[:lower:]_')
     base="build/${name_snake}_resume"
     make clean
     make

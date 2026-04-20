@@ -1,21 +1,27 @@
 DIR_BUILD := build
 
-OPT_NAME := $(shell cat NAME)
-OPT_PHONE := $(shell cat PHONE)
-OPT_EMAIL := $(shell cat EMAIL)
-OPT_GITHUB_URL := $(shell cat GITHUB_URL)
+include .env
+
+# .env values are shell-quoted (so `. ./.env` works for release.sh and the
+# just test recipe). Strip all double quotes for Make's use — metadata values
+# must not contain literal " characters.
+NAME       := $(subst ",,$(NAME))
+EMAIL      := $(subst ",,$(EMAIL))
+PHONE      := $(subst ",,$(PHONE))
+GITHUB_URL := $(subst ",,$(GITHUB_URL))
+
 OPT_VERSION := $(shell cat VERSION)
 
-STR_NAME_SNAKE := $(shell cat NAME | tr "[:upper:]" "[:lower:]" | tr " " "_")
+STR_NAME_SNAKE := $(shell echo '$(NAME)' | tr "[:upper:]" "[:lower:]" | tr " " "_")
 
 JUSTFILE_VARIABLES := \
-		"name=$(OPT_NAME)" \
-		"email=$(OPT_EMAIL)" \
-		"phone=$(OPT_PHONE)" \
-		"github_url=$(OPT_GITHUB_URL)" \
+		"name=$(NAME)" \
+		"email=$(EMAIL)" \
+		"phone=$(PHONE)" \
+		"github_url=$(GITHUB_URL)" \
 		"version=$(OPT_VERSION)"
 
-FILES_DEPS := VERSION Makefile
+FILES_DEPS := VERSION .env Makefile
 
 FILE_OUT_BASE := $(DIR_BUILD)/$(STR_NAME_SNAKE)_resume
 

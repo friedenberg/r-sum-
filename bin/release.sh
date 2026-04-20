@@ -12,7 +12,9 @@ version="v$(cat ./VERSION)"
 
 make
 
-str_snake_case="$(tr "[:upper:]" "[:lower:]" <NAME | tr " " "_")"
+# shellcheck disable=SC1091
+. ./.env
+str_snake_case="$(echo "$NAME" | tr "[:upper:]" "[:lower:]" | tr " " "_")"
 file_out_base="build/${str_snake_case}_resume"
 
 git diff --exit-code -s || (echo "unstaged changes, refusing to release" && exit 1)

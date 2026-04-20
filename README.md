@@ -6,7 +6,14 @@ A series of [Pandoc][pandoc] templates that convert a single Markdown resume int
 
 1. Clone or fork. The [Nix][nix] flake devshell (`nix develop`, or direnv `use flake`) provides the build tooling: Pandoc, `resume-builder`, [`chrest`][chrest] with a headless Firefox for PDF, and `just`.
 1. Edit `resume.md` (primary, flexbox layout) or `resume-no-columns.md` (simpler table-based alt; toggle via `WHICH_RESUME` in the `Makefile`).
-1. Create single-line text files `NAME`, `EMAIL`, `PHONE`, `GITHUB_URL`, and `VERSION` (all gitignored, per-user).
+1. Create a gitignored `.env` with double-quoted entries (one per line):
+   ```
+   NAME="Your Name"
+   EMAIL="you@example.com"
+   PHONE="+1 (555) 123-4567"
+   GITHUB_URL="https://github.com/you"
+   ```
+   `VERSION` is a separate tracked single-line file, already in the repo.
 1. `just build` (wraps `make`). Outputs land in `build/`.
 
 `just test` runs a clean smoke build and verifies all three outputs exist. The same recipe is wired as a `sc merge` pre-merge hook via `sweatfile`.

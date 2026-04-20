@@ -14,7 +14,7 @@ make clean        # Remove build directory
 make build/sasha_friedenberg_resume.docx  # Opt-in docx build
 ```
 
-The Makefile reads metadata from single-line files: `NAME`, `EMAIL`, `PHONE`, `GITHUB_URL`, `VERSION`. All of these except `VERSION` are **gitignored** — each user creates their own before running `make`. Values are passed to `resume-builder` as template variables.
+The Makefile reads personal metadata (`NAME`, `EMAIL`, `PHONE`, `GITHUB_URL`) from a single **gitignored** `.env` file in the repo root. Values must be **double-quoted** (e.g. `NAME="Sasha Friedenberg"`) so that `. ./.env` from bash (release.sh, `just test`) handles values with spaces correctly; the Makefile strips the quotes via `$(patsubst "%",%,…)` when importing via `include .env`. Each user creates their own `.env` before running `make`. `VERSION` remains a separate **tracked** single-line file (tied to release.sh / git tags). Values are passed to `resume-builder` as template variables.
 
 There is a TODO in the `Makefile` header to migrate the build to a justfile; preserve the Makefile unless explicitly asked to migrate.
 
