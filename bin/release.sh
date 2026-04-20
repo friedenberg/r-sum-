@@ -24,9 +24,9 @@ function run_with_gh_token() {
   "$@"
 }
 
-run_with_gh_token hub release create \
-  -a "$file_out_base.html" \
-  -a "$file_out_base.txt" \
-  -a "$file_out_base.pdf" \
-  -m "$version" \
-  "$version"
+run_with_gh_token gh release create "$version" \
+  --title "$version" \
+  --notes "$version" \
+  "$file_out_base.html" \
+  "$file_out_base.txt" \
+  "$file_out_base.pdf"

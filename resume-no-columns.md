@@ -1,3 +1,9 @@
+<!--
+  Alternative "no-columns" resume layout. Toggleable via `WHICH_RESUME`
+  in the Makefile. Intentionally kept as a simpler, table-based variant
+  alongside the primary `resume.md` flexbox layout.
+-->
+
 #  {#section .table-leader .padding-bottom}
 
 ##

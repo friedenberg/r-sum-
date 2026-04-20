@@ -1,6 +1,3 @@
-
-# TODO migrate to justfile
-
 DIR_BUILD := build
 
 OPT_NAME := $(shell cat NAME)
@@ -40,9 +37,6 @@ WHICH_RESUME := resume.md
 build/resume.md: $(WHICH_RESUME) | $(DIR_BUILD)
 	cp '$<' '$@'
 
-# build/resume.css: style.scss | $(DIR_BUILD)
-# 	nix-shell -p sass --run "sass '$<' '$@'"
-#
 build/%.pdf.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 	resume-builder $(JUSTFILE_VARIABLES) html-standalone "$<"
 	mv "$<.html" "$@"
@@ -50,19 +44,15 @@ build/%.pdf.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 	resume-builder $(JUSTFILE_VARIABLES) html-embedded "$<"
 	mv "$<.html" "$@"
-	# cp build/resume.css $(HOME)/eng/site-linen_is_great/public/
 	@test -d $(HOME)/eng2/site-linenisgreat/public \
 	    && cp $@ $(HOME)/eng2/site-linenisgreat/public/resume.html \
 	    || true
 
-build/NAME.txt: Makefile
-	figlet -c -fsmslant '$(OPT_NAME)' > '$@'
-
-build/%.txt: build/%.md build/NAME.txt $(FILES_DEPS) | $(DIR_BUILD)
+build/%.txt: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 	resume-builder $(JUSTFILE_VARIABLES) txt "$<"
 	mv "$<.txt" "$@"
 
-build/%.docx: build/%.md build/NAME.txt $(FILES_DEPS) | $(DIR_BUILD)
+build/%.docx: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 	resume-builder $(JUSTFILE_VARIABLES) docx "$<"
 	mv "$<.docx" "$@"
 

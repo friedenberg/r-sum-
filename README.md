@@ -1,30 +1,19 @@
 # r-sum-
 
-A series of [Pandoc][pandoc] templates that converts a single Markdown resume into an
-HTML, PDF, and plaintext resume.
+A series of [Pandoc][pandoc] templates that convert a single Markdown resume into HTML, PDF, and plaintext.
 
 ## Usage
 
-1. Install [pandoc][pandoc] and Google Chrome
-1. Clone or fork
-1. Edit `resume.md`
-1. Create `NAME`, `EMAIL`, `PHONE`, and `VERSION`
-1. Run `make`
+1. Clone or fork. The [Nix][nix] flake devshell (`nix develop`, or direnv `use flake`) provides the build tooling: Pandoc, `resume-builder`, [`chrest`][chrest] with a headless Firefox for PDF, and `just`.
+1. Edit `resume.md` (primary, flexbox layout) or `resume-no-columns.md` (simpler table-based alt; toggle via `WHICH_RESUME` in the `Makefile`).
+1. Create single-line text files `NAME`, `EMAIL`, `PHONE`, `GITHUB_URL`, and `VERSION` (all gitignored, per-user).
+1. `just build` (wraps `make`). Outputs land in `build/`.
 
-View your freshly built resume in `build/`
+`just test` runs a clean smoke build and verifies all three outputs exist. The same recipe is wired as a `sc merge` pre-merge hook via `sweatfile`.
 
 ## Considerations
 
-Why use Google Chrome for rendering HTML & CSS as a PDF? I tried using a number
-of HTML & CSS to PDF renderers, such as the following:
-
-- <https://wkhtmltopdf.org/>
-- <https://weasyprint.org/>
-
-And others featured on <https://print-css.rocks/>. I found that most don't
-properly support various common CSS features (such as Flexbox). Chrome's
-`--headless --disable-gpu --print-to-pdf=FILE --print-to-pdf-no-header`
-command-line option does exactly what I need for this project.
+Rendering HTML+CSS to PDF through a real browser sidesteps the common case where dedicated HTML-to-PDF tools (wkhtmltopdf, WeasyPrint, and others listed at <https://print-css.rocks/>) don't properly support Flexbox — which this layout relies on. The default renderer drives a headless Firefox via `chrest`; override with `make PDF_RENDERER=html-to-pdf` to use Chrome's `--headless --print-to-pdf` if you have that binary on PATH.
 
 ## Inspiration
 
@@ -32,3 +21,5 @@ command-line option does exactly what I need for this project.
 - <https://resume.chmd.fr/>
 
 [pandoc]: <https://pandoc.org/>
+[nix]: <https://nixos.org/>
+[chrest]: <https://github.com/amarbel-llc/chrest>

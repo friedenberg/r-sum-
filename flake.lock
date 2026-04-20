@@ -205,7 +205,7 @@
     "html-to-pdf": {
       "inputs": {
         "nixpkgs": "nixpkgs_6",
-        "nixpkgs-master": "nixpkgs-master_6",
+        "nixpkgs-master": "nixpkgs-master_5",
         "utils": "utils_3"
       },
       "locked": {
@@ -302,22 +302,6 @@
     },
     "nixpkgs-master_5": {
       "locked": {
-        "lastModified": 1773486025,
-        "narHash": "sha256-ea+4Zg0lMGErMGZrgkg25c9fiGzMmHStyBjwH1xJFFw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e034e386767a6d00b65ac951821835bd977a08f7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e034e386767a6d00b65ac951821835bd977a08f7",
-        "type": "github"
-      }
-    },
-    "nixpkgs-master_6": {
-      "locked": {
         "lastModified": 1770522055,
         "narHash": "sha256-03+UdWZAo150UdTZGG4xwSCTTT0GbxpSyGn9j4FBBH8=",
         "owner": "NixOS",
@@ -332,7 +316,7 @@
         "type": "github"
       }
     },
-    "nixpkgs-master_7": {
+    "nixpkgs-master_6": {
       "locked": {
         "lastModified": 1773486025,
         "narHash": "sha256-ea+4Zg0lMGErMGZrgkg25c9fiGzMmHStyBjwH1xJFFw=",
@@ -472,7 +456,7 @@
       "inputs": {
         "html-to-pdf": "html-to-pdf",
         "nixpkgs": "nixpkgs_7",
-        "nixpkgs-master": "nixpkgs-master_7",
+        "nixpkgs-master": "nixpkgs-master_6",
         "utils": "utils_4"
       },
       "locked": {
@@ -493,7 +477,6 @@
       "inputs": {
         "chrest": "chrest",
         "nixpkgs": "nixpkgs_5",
-        "nixpkgs-master": "nixpkgs-master_5",
         "resume-builder": "resume-builder",
         "utils": "utils_5"
       }

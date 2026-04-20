@@ -207,7 +207,7 @@ Platform Engineer
 -   Developed staging and local development environment for a mixed codebase
     (legacy and new product)
 
-##  {#section-6 .positions-no-title .allow-breaks}
+##  {.positions-no-title .allow-breaks}
 
 :::::: position-flex
 ::: {.position-flex-text .position-flex-company}
