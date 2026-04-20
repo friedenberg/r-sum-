@@ -23,6 +23,8 @@ A thin `justfile` lives alongside the Makefile (see issue #3 for the broader mig
 - `just build` — invokes `make`.
 - `just test` — smoke test. Stubs any missing metadata files (so the recipe also works from a clean checkout / CI), runs `make clean && make`, and asserts `build/<name>_resume.{html,txt,pdf}` all exist non-empty and the PDF has valid magic. Writes the build output to stdout/stderr as-is.
 
+`sweatfile` at the repo root wires `just test` as a `[hooks]` `pre-merge` for `sc merge` (spinclass). The hook runs via `sh -c` from the worktree cwd after rebase but before fast-forward; non-zero exit aborts the merge. No `nix develop` wrapping — `just` is expected to be on the invoker's ambient PATH.
+
 ## Release
 
 ```sh
