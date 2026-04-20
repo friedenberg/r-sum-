@@ -2,6 +2,11 @@
 
 # TODO migrate to site-linenisgreat and add support for historical objects
 
+# Validate prerequisites before any irreversible action (commit / push / release).
+test -s ./.env       || { echo ".env is missing or empty; create it before releasing" >&2; exit 1; }
+test -s ./VERSION    || { echo "VERSION is missing or empty" >&2; exit 1; }
+test -s ./secrets.env || { echo "secrets.env is missing (decrypt it with git-secret)" >&2; exit 1; }
+
 ${EDITOR:-${VISUAL:-vi}} ./VERSION
 git add ./VERSION
 git diff --exit-code -s ./VERSION || (echo "version wasn't changed" && exit 1)
