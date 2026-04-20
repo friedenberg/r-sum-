@@ -14,9 +14,7 @@ make clean        # Remove build directory
 make build/sasha_friedenberg_resume.docx  # Opt-in docx build
 ```
 
-The Makefile reads personal metadata (`NAME`, `EMAIL`, `PHONE`, `GITHUB_URL`) from a single **gitignored** `.env` file in the repo root. Values must be **double-quoted** (e.g. `NAME="Sasha Friedenberg"`) so that `. ./.env` from bash (release.sh, `just test`) handles values with spaces correctly; the Makefile strips the quotes via `$(patsubst "%",%,…)` when importing via `include .env`. Each user creates their own `.env` before running `make`. `VERSION` remains a separate **tracked** single-line file (tied to release.sh / git tags). Values are passed to `resume-builder` as template variables.
-
-There is a TODO in the `Makefile` header to migrate the build to a justfile; preserve the Makefile unless explicitly asked to migrate.
+The Makefile reads personal metadata (`NAME`, `EMAIL`, `PHONE`, `GITHUB_URL`) from a single **gitignored** `.env` file in the repo root. Values must be **double-quoted** (e.g. `NAME="Sasha Friedenberg"`) so that `. ./.env` from bash (release.sh, `just test`) handles values with spaces correctly; the Makefile strips the quotes via `$(subst ",,…)` when importing via `include .env`. Each user creates their own `.env` before running `make`. `VERSION` remains a separate **tracked** single-line file (tied to release.sh / git tags). Values are passed to `resume-builder` as template variables.
 
 A thin `justfile` lives alongside the Makefile (see issue #3 for the broader migration question — not done yet). Recipes:
 
@@ -31,7 +29,7 @@ A thin `justfile` lives alongside the Makefile (see issue #3 for the broader mig
 bin/release.sh    # Bumps VERSION, commits, pushes, builds, creates GitHub release
 ```
 
-Uses the `hub` CLI with a GitHub token loaded via `direnv dotenv bash secrets.env`.
+Uses the `gh` CLI with auth managed by `gh auth login` (keyring-backed). No env-var token needed. Preflight checks (`test -s .env`, `test -s VERSION`) run before the irreversible version-bump / push / release-create sequence.
 
 ## CI
 
@@ -66,11 +64,8 @@ The resume uses Pandoc's fenced div syntax (`::: {.class}`) extensively for layo
 
 ## Sensitive / Secret Files
 
-Secrets are managed with [`git-secret`](https://git-secret.io):
-- `secrets.env.secret` is the encrypted blob checked into the repo.
-- `secrets.env` is the decrypted plaintext; it is **gitignored** and should never be committed. `bin/release.sh` sources it via `direnv dotenv bash secrets.env` at release time.
-- `.gitsecret/keys/random_seed` is also gitignored.
-- `PHONE` contains a phone number — do not expose it in output, logs, or commits.
-- `just test` (and `make` in general) prints `PHONE`, `EMAIL`, and other metadata as part of resume-builder's command-line echo, and the rendered `build/*_resume.{html,txt,pdf}` outputs also contain them. Both the metadata inputs (`NAME`/`EMAIL`/`PHONE`/`GITHUB_URL`) and `build/` are gitignored, CI doesn't run `just test`, and no log file is written — so the PII only lives in local terminal scrollback and in the gitignored build outputs. Still, **don't pipe test output to a file you'll share**, and don't paste the scrollback into issues/PRs.
+- `.env` (gitignored) contains `NAME`, `EMAIL`, `PHONE`, `GITHUB_URL`. `PHONE` is a real phone number — do not expose it in output, logs, or commits. `build/` is also gitignored, which matters because the rendered `build/*_resume.{html,txt,pdf}` outputs embed these values.
+- `just test` and `make` print metadata on stdout/stderr as part of resume-builder's command-line echo. CI doesn't run `just test` and no log file is written — so the PII only lives in local terminal scrollback and in the gitignored build outputs. Still, **don't pipe test output to a file you'll share**, and don't paste the scrollback into issues/PRs.
+- There's no long-lived GitHub token in this repo — `bin/release.sh` relies on `gh`'s keyring auth. The repo used to ship a `git-secret`-encrypted `secrets.env.secret` for a `GITHUB_TOKEN`; that has been removed.
 
 There is a TODO in `bin/release.sh` to migrate the release flow to `site-linenisgreat` and add support for historical objects; preserve the current script unless explicitly asked to migrate.

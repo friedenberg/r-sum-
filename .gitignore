@@ -5,7 +5,4 @@
 .sass-cache/
 build/
 
-.gitsecret/keys/random_seed
-!*.secret
 .env
-secrets.env
