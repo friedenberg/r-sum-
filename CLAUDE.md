@@ -35,8 +35,8 @@ Uses the `hub` CLI with a GitHub token loaded via `direnv dotenv bash secrets.en
 ## Environment
 
 - **Nix flake** with `direnv` (`source_up` + `use flake`) provides the dev shell.
-- The only flake input that contributes tooling is `resume-builder`; Pandoc comes transitively through it. (`devenv-pandoc` was removed — do not re-add it.)
-- PDF generation uses `html-to-pdf` (Chrome headless), which is provided by `resume-builder`.
+- Flake inputs that contribute tooling: `resume-builder` (brings Pandoc transitively), `chrest` (brings its own headless Firefox in-closure), and `nixpkgs.figlet`. (`devenv-pandoc` was removed — do not re-add it.)
+- PDF generation defaults to `chrest capture --format pdf --browser firefox` (headless Firefox). Override with `make PDF_RENDERER=html-to-pdf` to use the legacy renderer — but note `html-to-pdf` is not currently provided by this flake and must be on PATH separately.
 
 ## Architecture
 
@@ -45,7 +45,7 @@ Build pipeline: `resume.md` → copy to `build/` → `resume-builder` generates 
 Output formats:
 - **HTML embedded**: deployed by the Makefile to `~/eng2/site-linenisgreat/public/resume.html` as a side-effect of the `build/%.html` rule.
 - **HTML standalone**: intermediate for PDF (`build/%.pdf.html`).
-- **PDF**: generated from standalone HTML via `html-to-pdf`.
+- **PDF**: generated from standalone HTML via the renderer selected by `PDF_RENDERER` (`chrest` by default, `html-to-pdf` as opt-in).
 - **TXT**: uses `figlet` (font `smslant`) to render the name header.
 - **docx**: available via `resume-builder docx`, not part of the default `all` target.
 

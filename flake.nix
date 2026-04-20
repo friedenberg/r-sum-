@@ -5,6 +5,7 @@
     utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.102";
 
     resume-builder.url = "github:friedenberg/resume-builder";
+    chrest.url = "github:amarbel-llc/chrest";
   };
 
   outputs =
@@ -14,6 +15,7 @@
       nixpkgs-master,
       utils,
       resume-builder,
+      chrest,
     }:
     utils.lib.eachDefaultSystem (
       system:
@@ -27,6 +29,8 @@
         devShells.default = pkgs.mkShell {
           packages = [
             resume-builder.packages.${system}.resume-builder
+            chrest.packages.${system}.default
+            pkgs.figlet
           ];
         };
       }

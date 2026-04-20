@@ -51,7 +51,9 @@ build/%.html: build/%.md $(FILES_DEPS) | $(DIR_BUILD)
 	resume-builder $(JUSTFILE_VARIABLES) html-embedded "$<"
 	mv "$<.html" "$@"
 	# cp build/resume.css $(HOME)/eng/site-linen_is_great/public/
-	cp $@ $(HOME)/eng2/site-linenisgreat/public/resume.html
+	@test -d $(HOME)/eng2/site-linenisgreat/public \
+	    && cp $@ $(HOME)/eng2/site-linenisgreat/public/resume.html \
+	    || true
 
 build/NAME.txt: Makefile
 	figlet -c -fsmslant '$(OPT_NAME)' > '$@'
@@ -64,8 +66,14 @@ build/%.docx: build/%.md build/NAME.txt $(FILES_DEPS) | $(DIR_BUILD)
 	resume-builder $(JUSTFILE_VARIABLES) docx "$<"
 	mv "$<.docx" "$@"
 
+# One of: chrest, html-to-pdf
+PDF_RENDERER ?= chrest
+CMD_PDF_html-to-pdf = html-to-pdf "$<"
+CMD_PDF_chrest      = chrest capture --format pdf --browser firefox \
+                          --url "file://$(CURDIR)/$<" --no-headers --background
+
 build/%.pdf: build/%.pdf.html $(FILES_DEPS) | $(DIR_BUILD)
-	html-to-pdf "$<" > "$@"
+	$(CMD_PDF_$(PDF_RENDERER)) > "$@"
 
 .PHONY: clean
 clean:
